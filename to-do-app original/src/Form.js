@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Alert from './Alert.js'
+import Task from './Task.js';
 
 export default class Form extends React.Component { //stateless component
 
@@ -8,16 +9,14 @@ export default class Form extends React.Component { //stateless component
 handleClick = (event) => {
     // console.log('sample click')
     event.preventDefault();
-
-    console.log('SAMPLE CLICK');
-      this.setState({tasks: [this.state.input]});   //referring to line 9
-      console.log(this.state.tasks)
+      console.log(this.state.task)
 
 }
 
 handleChangeInput = (entry) => {
-    // console.log(entry.target.value)
-    this.setState({ input: entry });
+    const userInput = entry.target.value;
+    this.setState({ task: userInput });
+    return userInput;
 }
 
 render(){
@@ -34,7 +33,7 @@ render(){
     <button onClick={this.handleClick} >Submit</button>
 
 </form>
-
+ <Task item={this.props.form} />
 </div>
 
     )

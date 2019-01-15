@@ -1,16 +1,16 @@
 import React, {Component} from 'react';
-
+import Form from './Form.js';
 
 const Task = props => {
 
-    return(
+  return(
         <div>
             <ol>
-                { console.log(props)
+                { console.log()}
                     props.tasks.map(entry => {
-                        return(
-                            <li>{entry}</li>
-                        )
+                     
+                            <li>Sample Text goes here</li>
+                    
                     })
                 }
             </ol>
@@ -19,13 +19,5 @@ const Task = props => {
 
 };
 
-// export default class Task extends React.Component {
+export default Task  
 
-   
-//     render(){
-
-//         return(
-
-//         )
-//     }
-// }
