@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
-export default class Alert extends React.Component {
+const Alert = props => {
 
-    render(){
         return(
             <div>
-                    <input name="alert-time" type="time" /> 
+                    <input name="alert-time" type="time" onChange={props.onChange} /> 
             </div>
         )
-    }
 }
+
+export default Alert;
