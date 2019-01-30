@@ -2,21 +2,20 @@ import React, {Component} from 'react';
 
 const Task = props => {
 
+    {var key= 0}
+    
   return(
         <div>
-            <ol>
+                <ol>
                     {props.tasks.map(entry => {
                         return(
                             <div>
-                            {/* NOT SET UP PROPERLY YET */}
-                            <li>{entry.name}</li> 
-                            <li> {entry.time}</li>      
-                            {/* NOT SET UP PROPERLY YET */}
+                                 <li key={key++}>{entry.name} {entry.time}</li> 
                             </div>
                         )
                     })
                 }
-            </ol>
+                </ol>
         </div>
     )
 

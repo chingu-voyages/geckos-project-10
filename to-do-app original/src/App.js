@@ -21,10 +21,11 @@ class App extends Component {
   handleClick = (event) => {
     // console.log('sample click')
     event.preventDefault();
-      console.log("this.state.tasks", this.state.tasks)
-      this.setState({tasks:[{...this.state.tasks, name: this.state.input, time: this.state.time}]})
-     
-}
+      // console.log("this.state.tasks", this.state.tasks)
+      this.setState(prevState => ({
+        tasks:[...prevState.tasks, {name: prevState.input, time: prevState.time
+        }]}))
+  }
 
 handleChangeInput = (entry) => {
     // const userInput = entry.target.value;
@@ -37,7 +38,7 @@ handleChangeInput = (entry) => {
 
 handleChangeTime = (entry) => {
   this.setState({time: entry.target.value});
-  console.log(entry.target.value)
+  console.log("entry.target.value", entry.target.value)
 }
 
 
