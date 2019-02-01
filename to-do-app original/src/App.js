@@ -10,10 +10,12 @@ class App extends Component {
       // IS THIS.STATE SET UP PROPERLY?
       input: '',
       time: '',
-      tasks: [{
-        name: "",
-        time: ""
-      }]
+      tasks: [
+      //   {
+      //   name: "",
+      //   time: ""
+      // }
+    ]
     }
   }
 
