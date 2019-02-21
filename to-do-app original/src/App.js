@@ -48,7 +48,7 @@ handleChangeTime = (entry) => {
     return (
       <div>
       <h1 className="title">
-        To Do List.handleClick
+        To Do List
       </h1>
       <Form
         value={this.state.input}
