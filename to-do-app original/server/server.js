@@ -3,17 +3,25 @@ import App from '../src/App.js';
 import { renderToString } from 'react-dom/server';
 import fs from 'fs';
 const express = require('express');
+const bodyParser = require('body-parser');
 const path = require('path');
 const app = express();
 
-app.use(express.static(path.join(__dirname, '/../public')));
+// app.use(express.static(path.join(__dirname, '/../public')));
 
 // app.get('/', function (req, res) {
 //  return res.send('./public/index.html');
 // });
 
+app.use( bodyParser.json() );       // to support JSON-encoded bodies
+app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+  extended: true
+})); 
+
+
 app.get('/', function (req, res) {
   const appString = renderToString(<App />);
+
 
   const indexFile = path.resolve('../to-do-app original/public/index.html');
   fs.readFile(indexFile, 'utf8', (err, data) => {
@@ -24,7 +32,7 @@ app.get('/', function (req, res) {
 
     return res.send(
       data.replace('<div id="root"></div>', `<div id="root">${appString}</div>`)
-    );
+    );  
   });
   // res.sendFile(path.join(__dirname, '/../public', 'index.html'));
 
@@ -32,7 +40,12 @@ app.get('/', function (req, res) {
   //   body: appString,
   //   title: 'Hello World from the server',
   // }))
+  console.log('this is a get request')
 });
+
+app.post('/', function(req, res){
+  console.log(req.body)
+})
 
 app.listen(8080);
 console.log('Node server running on port 8080');  

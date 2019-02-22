@@ -6,7 +6,7 @@ import Alert from './Alert.js'
 const Form = props => {
     return (
         <div>
-        <form>
+        <form method="POST" action="/">
             <input name="task" type="text" onChange = {props.onChange}  placeholder="Type your task" /><br></br>
             <input name="alert-time" type="time" onChange = {props.time} /> 
 
