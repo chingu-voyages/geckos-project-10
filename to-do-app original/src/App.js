@@ -7,7 +7,6 @@ class App extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      // IS THIS.STATE SET UP PROPERLY?
       input: '',
       time: '',
       tasks: [
@@ -24,9 +23,19 @@ class App extends Component {
     // console.log('sample click')
     event.preventDefault();
       // console.log("this.state.tasks", this.state.tasks)
-      this.setState(prevState => ({
-        tasks:[...prevState.tasks, {name: prevState.input, time: prevState.time
-        }]}))
+      // this.setState(prevState => ({
+      //   tasks:[...prevState.tasks, {name: prevState.input, time: prevState.time
+      //   }]}))
+      const entry = {task:this.state.input, time:this.state.time};
+      fetch("http://localhost:8080/", {
+        method: 'POST',
+        headers:{
+          "Content-type": "application/json"
+        },
+        body: JSON.stringify(entry)
+      })
+      .then(response => response.json())
+      .then(result => console.log(result))
   }
 
 handleChangeInput = (entry) => {

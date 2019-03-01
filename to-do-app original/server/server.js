@@ -6,12 +6,28 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const app = express();
-
+const mongoose = require("mongoose");
 // app.use(express.static(path.join(__dirname, '/../public')));
 
 // app.get('/', function (req, res) {
 //  return res.send('./public/index.html');
 // });
+
+
+mongoose.Promise = global.Promise;
+mongoose.connect("mongodb://localhost:27018/to-do-app-original",  {useNewUrlParser: true}); //creating the database
+
+var nameSchema =  mongoose.Schema({
+  task: String,
+  time: String 
+ }, {
+   versionKey: false
+ });
+
+ var Task = mongoose.model("task", nameSchema);
+
+
+
 
 app.use( bodyParser.json() );       // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
@@ -43,8 +59,20 @@ app.get('/', function (req, res) {
   console.log('this is a get request')
 });
 
-app.post('/', function(req, res){
-  console.log(req.body)
+app.post('/', function(req, res){ //database endpoint
+  console.log(req.body, "*******")
+  Task.create(req.body, (err,res)=>{
+    if(err){
+      console.log(err)
+    } console.log(res)
+  })
+  // .then(item => {
+  // res.send("item saved to database");
+  // })
+  // console.log('IS ITEM SAVED?')
+  // .catch(err => {
+  // res.status(400).send("unable to save to database");
+  // });
 })
 
 app.listen(8080);
