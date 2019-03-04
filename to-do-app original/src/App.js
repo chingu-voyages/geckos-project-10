@@ -52,6 +52,11 @@ handleChangeTime = (entry) => {
   console.log("entry.target.value", entry.target.value)
 }
 
+componentDidMount(){ //does something immedietly on browser on load
+  fetch("http://localhost:8080/tasks")
+  .then(result => {return result.json()})
+  .then(jsonResult => {console.log(jsonResult)})
+};
 
   render() {
     return (

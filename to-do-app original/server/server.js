@@ -75,5 +75,18 @@ app.post('/', function(req, res){ //database endpoint
   // });
 })
 
+app.get ('/tasks', function(req, res){ //sending to wherever /tasks route is listed
+  console.log('this is the other get request')
+  Task.find({}, function(err, tasks){
+      // res.send() 
+      if(err){
+        console.log(err);
+      } else {
+        res.send(tasks)
+      }    
+    })
+})
+
 app.listen(8080);
 console.log('Node server running on port 8080');  
+
