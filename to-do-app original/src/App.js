@@ -19,44 +19,42 @@ class App extends Component {
   }
 
 
-  handleClick = (event) => {
-    // console.log('sample click')
-    event.preventDefault();
-      // console.log("this.state.tasks", this.state.tasks)
-      // this.setState(prevState => ({
-      //   tasks:[...prevState.tasks, {name: prevState.input, time: prevState.time
-      //   }]}))
-      const entry = {task:this.state.input, time:this.state.time};
-      fetch("http://localhost:8080/", {
-        method: 'POST',
-        headers:{
-          "Content-type": "application/json"
-        },
-        body: JSON.stringify(entry)
-      })
-      .then(response => response.json())
-      .then(result => console.log(result))
-  }
+  // handleClick = (event) => {
+  //   // console.log('sample click')
+  //   event.preventDefault();
 
-handleChangeInput = (entry) => {
-    // const userInput = entry.target.value;
-    this.setState({ input: entry.target.value });
-    // console.log(this.state.input)
-    console.log("entry.target.value", entry.target.value)
-    console.log("entry.target", entry.target)
-    // return userInput;
-}
+  //     const entry = {task:this.state.input, time:this.state.time};
+  //     fetch("http://localhost:8080/", {
+  //       method: 'POST',
+  //       headers:{
+  //         "Content-type": "application/json"
+  //       },
+  //       body: JSON.stringify(entry)
+  //     })
+  //     .then(response => response.json())
+  //     .then(result => console.log(result))
+  // }
 
-handleChangeTime = (entry) => {
-  this.setState({time: entry.target.value});
-  console.log("entry.target.value", entry.target.value)
-}
+// handleChangeInput = (entry) => {
+//     // const userInput = entry.target.value;
+//     this.setState({ input: entry.target.value });
+//     // console.log(this.state.input)
+//     console.log("entry.target.value", entry.target.value)
+//     console.log("entry.target", entry.target)
+//     // return userInput;
+// }
 
-componentDidMount(){ //does something immedietly on browser on load
-  fetch("http://localhost:8080/tasks")
-  .then(result => {return result.json()})
-  .then(jsonResult => {console.log(jsonResult)})
-};
+// handleChangeTime = (entry) => {
+//   this.setState({time: entry.target.value});
+//   console.log("entry.target.value", entry.target.value)
+// }
+
+// componentDidMount(){ //does something immedietly on browser on load
+//   console.log('THIS IS CONSOLE LOG2');
+//   fetch("http://localhost:8080/tasks/")
+//   .then(result => {return result.json()})
+//   .then(jsonResult => {console.log(jsonResult)})
+// };
 
   render() {
     return (

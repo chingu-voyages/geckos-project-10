@@ -15,7 +15,7 @@ const mongoose = require("mongoose");
 
 
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://localhost:27018/to-do-app-original",  {useNewUrlParser: true}); //creating the database
+mongoose.connect("mongodb://localhost:27017/to-do-app-original",  {useNewUrlParser: true}); //creating the database
 
 var nameSchema =  mongoose.Schema({
   task: String,
@@ -69,7 +69,6 @@ app.post('/', function(req, res){ //database endpoint
   // .then(item => {
   // res.send("item saved to database");
   // })
-  // console.log('IS ITEM SAVED?')
   // .catch(err => {
   // res.status(400).send("unable to save to database");
   // });
