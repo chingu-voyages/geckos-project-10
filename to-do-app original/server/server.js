@@ -32,29 +32,50 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 })); 
 
 
-app.get('/', function (req, res) {
+app.get('/', function (req, res) {  //grabs from DB
   console.log('this is a GET request')
   let tasks;
-  TaskDB.find({}).exec((err, data) =>{ 
-    if (err) console.log(err);
+  
+  // TaskDB.find({}).exec((err, data) =>{ 
+  //   if (err) console.log(err);
+  //     tasks = data;
+  //     // console.log("THIS IS TASKS",tasks);
+  //     const taskString = renderToString(<Task todoTasks={tasks} />);
+  // })
+
+  TaskDB.find({}).exec().then((data) =>{ 
       tasks = data;
       // console.log("THIS IS TASKS",tasks);
-      // const taskString = renderToString(<Task todoTasks={tasks} />);
+  }).then(() => {
+    const appString = renderToString(<App tasks={tasks} />);
+    const indexFile = path.resolve('../to-do-app original/public/index.html');
+    fs.readFile(indexFile, 'utf8', (err, data) => {
+      if (err) {
+        console.error('Something went wrong:', err);
+        return res.status(500).send('Oops, better luck next time!');
+      }
+      return res.send(
+        data.replace('<div id="root"></div>', `<div id="root">${appString}</div>`)
+      );  
+    });
+  }).catch(err => {
+    console.log(err, 'THIS IS A GET PROMISE ERROR')
   })
- 
-  const appString = renderToString(<App />);
+
+  
+  // const appString = renderToString(<App />);
   // console.log('THIS IS APPSTRING', appString)
 
-  const indexFile = path.resolve('../to-do-app original/public/index.html');
-  fs.readFile(indexFile, 'utf8', (err, data) => {
-    if (err) {
-      console.error('Something went wrong:', err);
-      return res.status(500).send('Oops, better luck next time!');
-    }
-    return res.send(
-      data.replace('<div id="root"></div>', `<div id="root">${appString}</div>`)
-    );  
-  });
+  // const indexFile = path.resolve('../to-do-app original/public/index.html');
+  // fs.readFile(indexFile, 'utf8', (err, data) => {
+  //   if (err) {
+  //     console.error('Something went wrong:', err);
+  //     return res.status(500).send('Oops, better luck next time!');
+  //   }
+  //   return res.send(
+  //     data.replace('<div id="root"></div>', `<div id="root">${appString}</div>`)
+  //   );  
+  // });
   // res.sendFile(path.join(__dirname, '/../public', 'index.html'));
 
   // res.send(index({
@@ -63,20 +84,41 @@ app.get('/', function (req, res) {
   // }))
 });
 
-app.post('/', function(req, res){ //database endpoint
-  console.log(req.body, "*******")
-  TaskDB.create(req.body, (err,res)=>{
-    if(err){
-      console.log(err)
-    } 
-    // console.log(res)
-  })
-  // .then(item => {
-  // res.send("item saved to database");
+app.post('/', function(req, res){ //database endpoint; submits data from user input
+  // console.log(req.body, "*******")
+  // TaskDB.create(req.body, (err,res)=>{
+  //   if(err){
+  //     console.log(err)
+  //   } 
+  //   // console.log(res)
   // })
-  // .catch(err => {
-  // res.status(400).send("unable to save to database");
-  // });
+  let tasks;
+  console.log(req.body, "*******")
+  TaskDB.create(req.body, (err, result) => {
+    if(err){
+      console.log('ERROR IN CREATE ', err)
+    }
+    console.log('CREATE SUCCESS ',result)
+    TaskDB.find({}).exec()
+    .then((data) =>{ 
+      console.log(data)
+      tasks = data; })
+    .then(() => {
+      const appString = renderToString(<App tasks={tasks} />);
+      const indexFile = path.resolve('../to-do-app original/public/index.html');
+      fs.readFile(indexFile, 'utf8', (err, data) => {
+        if (err) {
+          console.error('Something went wrong:', err);
+          return res.status(500).send('Oops, better luck next time!');
+        }
+        return res.send(
+          data.replace('<div id="root"></div>', `<div id="root">${appString}</div>`)
+        );  
+      });
+    }).catch(err => {
+      console.log(err, 'THIS IS A POST PROMISE ERROR')
+    })
+  })
 })
 
 

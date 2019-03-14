@@ -10,12 +10,13 @@ class App extends Component {
     this.state = {
       input: '',
       time: '',
-      tasks: [
-        {
-          task: '',
-          time: ''
-        }
-      ]
+      // tasks: [
+      //   {
+      //     // task: '',
+      //     // time: ''
+      //   }
+      // ]
+      tasks: this.props.tasks
     
     }
   }
