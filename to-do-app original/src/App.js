@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Form from './Form.js'
 import Task from './Task.js'
 
+
 class App extends Component {
  
   constructor (props) {
@@ -10,11 +11,12 @@ class App extends Component {
       input: '',
       time: '',
       tasks: [
-      //   {
-      //   name: "",
-      //   time: ""
-      // }
-    ]
+        {
+          task: '',
+          time: ''
+        }
+      ]
+    
     }
   }
 
@@ -49,18 +51,39 @@ class App extends Component {
 //   console.log("entry.target.value", entry.target.value)
 // }
 
-// componentDidMount(){ //does something immedietly on browser on load
-//   console.log('THIS IS CONSOLE LOG2');
-//   fetch("http://localhost:8080/tasks/")
-//   .then(result => {return result.json()})
-//   .then(jsonResult => {console.log(jsonResult)})
-// };
+componentDidMount(){ //does something immedietly on browser on load
+  // fetch("http://localhost:8080/tasks/")
+  // .then(result => result.json())
+  // .then(tasks => this.setState({
+  //   tasks: tasks
+  // }))
+
+  // setTimeout(() => {
+  //   this.setState({
+  //       tasks:[{
+  //         name:'Hello world!'
+  //       }]
+  //   })
+  // }, 1500)
+};
+
+  componentWillMount(){
+
+  // fetch("http://localhost:8080/tasks/")
+  // .then(result => result.json())
+  // .then(tasks => this.setState({
+  //   tasks: tasks
+  //   }))
+
+    console.log('I AM COMPONENTWILLMOUNT!')
+
+  }
 
   render() {
     return (
       <div>
       <h1 className="title">
-        To Do List
+        To Do Lists
       </h1>
       <Form
         value={this.state.input}

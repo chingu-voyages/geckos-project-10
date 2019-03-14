@@ -2,16 +2,13 @@ import React from 'react';
 import App from '../src/App.js';
 import { renderToString } from 'react-dom/server';
 import fs from 'fs';
+import Task from '../src/Task.js';
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const app = express();
 const mongoose = require("mongoose");
 // app.use(express.static(path.join(__dirname, '/../public')));
-
-// app.get('/', function (req, res) {
-//  return res.send('./public/index.html');
-// });
 
 
 mongoose.Promise = global.Promise;
@@ -24,7 +21,7 @@ var nameSchema =  mongoose.Schema({
    versionKey: false
  });
 
- var Task = mongoose.model("task", nameSchema);
+ var TaskDB = mongoose.model("task", nameSchema);
 
 
 
@@ -36,8 +33,17 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 
 
 app.get('/', function (req, res) {
+  console.log('this is a GET request')
+  let tasks;
+  TaskDB.find({}).exec((err, data) =>{ 
+    if (err) console.log(err);
+      tasks = data;
+      // console.log("THIS IS TASKS",tasks);
+      // const taskString = renderToString(<Task todoTasks={tasks} />);
+  })
+ 
   const appString = renderToString(<App />);
-
+  // console.log('THIS IS APPSTRING', appString)
 
   const indexFile = path.resolve('../to-do-app original/public/index.html');
   fs.readFile(indexFile, 'utf8', (err, data) => {
@@ -45,7 +51,6 @@ app.get('/', function (req, res) {
       console.error('Something went wrong:', err);
       return res.status(500).send('Oops, better luck next time!');
     }
-
     return res.send(
       data.replace('<div id="root"></div>', `<div id="root">${appString}</div>`)
     );  
@@ -56,15 +61,15 @@ app.get('/', function (req, res) {
   //   body: appString,
   //   title: 'Hello World from the server',
   // }))
-  console.log('this is a get request')
 });
 
 app.post('/', function(req, res){ //database endpoint
   console.log(req.body, "*******")
-  Task.create(req.body, (err,res)=>{
+  TaskDB.create(req.body, (err,res)=>{
     if(err){
       console.log(err)
-    } console.log(res)
+    } 
+    // console.log(res)
   })
   // .then(item => {
   // res.send("item saved to database");
@@ -74,18 +79,23 @@ app.post('/', function(req, res){ //database endpoint
   // });
 })
 
-app.get ('/tasks', function(req, res){ //sending to wherever /tasks route is listed
-  console.log('this is the other get request')
-  Task.find({}, function(err, tasks){
-      // res.send() 
+
+ app.get ('/tasks', function(req, res){ //sending to wherever /tasks route is listed
+  console.log('this is the OTHER GET request')
+ TaskDB.find({}, function(err, tasks){
       if(err){
         console.log(err);
       } else {
-        res.send(tasks)
+        console.log(tasks);
+         res.send(tasks);
       }    
     })
 })
 
+
+
+
 app.listen(8080);
 console.log('Node server running on port 8080');  
 
+// export default todosData;
