@@ -11,9 +11,12 @@ const Task = props => {
                 <ol>
                     {console.log('THIS IS INSIDE THE RETURN',props.tasks)}
                     {props.tasks.map(entry => {
-                        return(
+                        return( 
                             <div>
-                                 <li key={entry._id}> {entry.task} {entry.time}</li> 
+                                <form method="DELETE" action="/?_method=DELETE">
+                                    <li style={{display: 'inline'}} key={entry._id}> {entry.task} {entry.time}</li>
+                                    <button >Delete</button>
+                                 </form>
                             </div>
                         )
                     })

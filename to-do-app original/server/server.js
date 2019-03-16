@@ -134,7 +134,16 @@ app.post('/', function(req, res){ //database endpoint; submits data from user in
     })
 })
 
-
+app.delete('/:id', function (req, res) {
+  console.log('DELETE REQUEST WORKING')
+  TaskDB.findByIdAndRemove(req.params._id,req.body, function(err,data)
+  {
+      if(!err){
+          console.log("Deleted");
+      }
+  });
+  res.send('DELETE request to homepage');
+});
 
 
 app.listen(8080);
