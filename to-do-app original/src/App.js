@@ -76,7 +76,7 @@ componentDidMount(){ //does something immedietly on browser on load
   //   tasks: tasks
   //   }))
 
-    console.log('I AM COMPONENTWILLMOUNT!')
+    // console.log('I AM COMPONENTWILLMOUNT!')
 
   }
 

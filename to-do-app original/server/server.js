@@ -8,7 +8,9 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const app = express();
 const mongoose = require("mongoose");
-// app.use(express.static(path.join(__dirname, '/../public')));
+const methodOverride = require('method-override');
+
+app.use(methodOverride('_method'));
 
 
 mongoose.Promise = global.Promise;
@@ -23,9 +25,6 @@ var nameSchema =  mongoose.Schema({
 
  var TaskDB = mongoose.model("task", nameSchema);
 
-
-
-
 app.use( bodyParser.json() );       // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
   extended: true
@@ -33,7 +32,7 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 
 
 app.get('/', function (req, res) {  //grabs from DB
-  console.log('this is a GET request')
+  // console.log('this is a GET request')
   let tasks;
   
   // TaskDB.find({}).exec((err, data) =>{ 
@@ -134,15 +133,36 @@ app.post('/', function(req, res){ //database endpoint; submits data from user in
     })
 })
 
-app.delete('/:id', function (req, res) {
+app.delete('/tasks/:id', function (req, res) {
   console.log('DELETE REQUEST WORKING')
-  TaskDB.findByIdAndRemove(req.params._id,req.body, function(err,data)
+  console.log(req.params)
+  let tasks;
+  TaskDB.findByIdAndRemove({_id:req.params.id}, function(err,data)
   {
-      if(!err){
-          console.log("Deleted");
+      if(err){
+          console.log("DELETE REQUEST ERROR");
       }
+      console.log('SUCCESSFULLY DELETED FINALLY ')
+      TaskDB.find({}).exec()
+      .then((data) =>{ 
+        console.log(data)
+        tasks = data; })
+      .then(() => {
+        const appString = renderToString(<App tasks={tasks} />);
+        const indexFile = path.resolve('../to-do-app original/public/index.html');
+        fs.readFile(indexFile, 'utf8', (err, data) => {
+          if (err) {
+            console.error('Something went wrong:', err);
+            return res.status(500).send('Oops, better luck next time!');
+          }
+          return res.send(
+            data.replace('<div id="root"></div>', `<div id="root">${appString}</div>`)
+          );  
+        });
+      }).catch(err => {
+        console.log(err, 'THIS IS A DELETE PROMISE ERROR')
+      })
   });
-  res.send('DELETE request to homepage');
 });
 
 
