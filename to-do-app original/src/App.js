@@ -1,6 +1,15 @@
 import React, { Component } from 'react';
 import Form from './Form.js'
 import Task from './Task.js'
+import '../public/App.css';
+
+const titleStyle = {
+  color: 'red'
+};
+
+const mainDiv = {
+  textAlign: 'center'
+};
 
 
 class App extends Component {
@@ -80,12 +89,14 @@ componentDidMount(){ //does something immedietly on browser on load
 
   }
 
+
   render() {
     return (
-      <div>
-      <h1 className="title">
-        To Do Lists
+      <div style={mainDiv}>
+      <h1 className="title" style={titleStyle}>
+        To Do List
       </h1>
+
       <Form
         value={this.state.input}
         onSubmit = {this.handleClick} //props that are being passed to Form 

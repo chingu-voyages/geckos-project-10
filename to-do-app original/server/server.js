@@ -121,17 +121,17 @@ app.post('/', function(req, res){ //database endpoint; submits data from user in
 })
 
 
- app.get ('/tasks', function(req, res){ //sending to wherever /tasks route is listed
-  console.log('this is the OTHER GET request')
- TaskDB.find({}, function(err, tasks){
-      if(err){
-        console.log(err);
-      } else {
-        console.log(tasks);
-         res.send(tasks);
-      }    
-    })
-})
+//  app.get ('/tasks', function(req, res){ //sending to wherever /tasks route is listed
+//   console.log('this is the OTHER GET request')
+//  TaskDB.find({}, function(err, tasks){
+//       if(err){
+//         console.log(err);
+//       } else {
+//         console.log(tasks);
+//          res.send(tasks);
+//       }    
+//     })
+// })
 
 app.delete('/tasks/:id', function (req, res) {
   console.log('DELETE REQUEST WORKING')
