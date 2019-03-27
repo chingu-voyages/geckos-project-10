@@ -9,6 +9,12 @@ const path = require('path');
 const app = express();
 const mongoose = require("mongoose");
 const methodOverride = require('method-override');
+const http = require('http');
+const accountSid = 'AC019a30196451142d27d879a8f687f3cc';
+const authToken = '978f64b17f1149a06b5f1a84c6fe1bf4';
+const client = require('twilio')(accountSid, authToken);
+const MessagingResponse = require('twilio').twiml.MessagingResponse;
+
 
 app.use(methodOverride('_method'));
 
@@ -18,7 +24,8 @@ mongoose.connect("mongodb://localhost:27017/to-do-app-original",  {useNewUrlPars
 
 var nameSchema =  mongoose.Schema({
   task: String,
-  time: String 
+  time: String,
+  number: String 
  }, {
    versionKey: false
  });
@@ -84,13 +91,6 @@ app.get('/', function (req, res) {  //grabs from DB
 });
 
 app.post('/', function(req, res){ //database endpoint; submits data from user input
-  // console.log(req.body, "*******")
-  // TaskDB.create(req.body, (err,res)=>{
-  //   if(err){
-  //     console.log(err)
-  //   } 
-  //   // console.log(res)
-  // })
   let tasks;
   console.log(req.body, "*******")
   TaskDB.create(req.body, (err, result) => {
@@ -99,8 +99,17 @@ app.post('/', function(req, res){ //database endpoint; submits data from user in
     }
     console.log('CREATE SUCCESS ',result)
     TaskDB.find({}).exec()
-    .then((data) =>{ 
-      console.log(data)
+
+  client.messages
+  .create({
+     body: 'This is the ship that made the Kessel Run in fourteen parsecs?',
+     from: '+15165634928',
+     to: ''
+   })
+  .then(message => console.log('THIS IS MESSAGE.SID', message.sid))
+    
+  .then((data) =>{ 
+      // console.log(data)
       tasks = data; })
     .then(() => {
       const appString = renderToString(<App tasks={tasks} />);
@@ -165,8 +174,25 @@ app.delete('/tasks/:id', function (req, res) {
   });
 });
 
+app.post('/sms', (req, res) => {
+  console.log('Twilio post request working')
+  const twiml = new MessagingResponse();
+
+  twiml.message('The Robots are coming! Head for the hills!');
+
+  res.writeHead(200, {'Content-Type': 'text/xml'});
+  res.end(twiml.toString());
+});
+
+// http.createServer(app).listen(1337, () => {
+//   console.log('Express server for Twilio listening on port 1337');
+// });
+
+
+//TESTER
+
+let testForSendSMS = "THIS IS A TEST!"
+
 
 app.listen(8080);
 console.log('Node server running on port 8080');  
-
-// export default todosData;

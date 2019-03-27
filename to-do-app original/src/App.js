@@ -3,10 +3,6 @@ import Form from './Form.js'
 import Task from './Task.js'
 import '../public/App.css';
 
-const titleStyle = {
-  color: 'red'
-};
-
 const mainDiv = {
   textAlign: 'center'
 };
@@ -19,13 +15,8 @@ class App extends Component {
     this.state = {
       input: '',
       time: '',
-      // tasks: [
-      //   {
-      //     // task: '',
-      //     // time: ''
-      //   }
-      // ]
-      tasks: this.props.tasks
+      tasks: this.props.tasks,
+      number: ''
     
     }
   }
@@ -93,15 +84,16 @@ componentDidMount(){ //does something immedietly on browser on load
   render() {
     return (
       <div style={mainDiv}>
-      <h1 className="title" style={titleStyle}>
+      <h1 className="title" style={{textAlign: 'center'}}>
         To Do List
       </h1>
 
       <Form
-        value={this.state.input}
-        onSubmit = {this.handleClick} //props that are being passed to Form 
-        onChange = {this.handleChangeInput}//refer to props.onChange in Form.js
-        time ={this.handleChangeTime}
+        // value={this.state.input}
+        // onSubmit = {this.handleClick} //props that are being passed to Form 
+        // onChange = {this.handleChangeInput}//refer to props.onChange in Form.js
+        // time = {this.handleChangeTime}
+        // number = {}
       />
 
       <Task

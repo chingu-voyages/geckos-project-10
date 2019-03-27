@@ -13,7 +13,7 @@ const Task = props => {
 
   return(
         <div>
-                <ol>
+                <ol style={{display: 'inline-block'}}>
                     {/* {console.log('THIS IS INSIDE THE RETURN',props.tasks)} */}
                     {props.tasks.map(entry => {
                         return( 
