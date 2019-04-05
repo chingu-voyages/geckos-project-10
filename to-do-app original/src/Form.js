@@ -8,7 +8,7 @@ const Form = props => {
         <div>
         <form method="POST" action="/">
             <input name="task" type="text" onChange = {props.onChange}  placeholder="Type your task" /><br></br>
-            <input name="time" type="time" onChange = {props.time} /> <br></br>
+            <input name="time" type="datetime-local" onChange = {props.time} /> <br></br>
             <input name="number" type="text" onChange = {props.number} placeholder='Type your number'/> 
         {/* <Alert onChange={props.handleChangeInput} />    */}
         <button onClick={props.onSubmit} >Submit</button>

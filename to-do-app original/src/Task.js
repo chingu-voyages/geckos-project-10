@@ -14,13 +14,12 @@ const Task = props => {
   return(
         <div>
                 <ol style={{display: 'inline-block'}}>
-                    {/* {console.log('THIS IS INSIDE THE RETURN',props.tasks)} */}
                     {props.tasks.map(entry => {
                         return( 
-                            <div style={widthStyle}>
+                            <div style={widthStyle}>,
                              <li>
                                 <form style={{display: 'inline'}} method="POST" action={`/tasks/${entry._id}?_method=DELETE`}>
-                                    <span style={{display: 'inline'}} key={entry._id}> {entry.task} {entry.time}</span>
+                                    <span style={{display: 'inline'}} key={entry._id}> {entry.task} {entry.time.toString().split('G')[0]}</span>
                                     <button >Delete</button>
                                  </form>
                                 </li>

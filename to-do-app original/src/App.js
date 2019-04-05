@@ -25,7 +25,6 @@ class App extends Component {
       </h1>
 
       <Form />
-
       <Task
         tasks={this.state.tasks} />
 
