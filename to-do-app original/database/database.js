@@ -51,7 +51,7 @@ nameSchema.statics.sendNotifications = function(callback) {
               to: `+1${task.number}`,
               from: '+15165634928',
               /* eslint-disable max-len */
-              body: `Hi. Just a reminder that you have an appointment coming up.`,
+              body: `${task.task}`,
               /* eslint-enable max-len */
           };
           console.log('THIS IS OPTIONS!', options)
