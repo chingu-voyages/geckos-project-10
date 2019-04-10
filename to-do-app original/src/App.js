@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Form from './Form.js'
 import Task from './Task.js'
-import '../public/App.css';
+import style from './App.css';
+import withStyles from 'isomorphic-style-loader/withStyles'
 
 const mainDiv = {
   textAlign: 'center'
@@ -33,4 +34,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withStyles(style)(App);

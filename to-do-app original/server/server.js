@@ -2,6 +2,7 @@ import React from 'react';
 import App from '../src/App.js';
 import { renderToString } from 'react-dom/server';
 import fs from 'fs';
+import StyleContext from 'isomorphic-style-loader/StyleContext';
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
@@ -35,17 +36,44 @@ app.get('/', function (req, res) {  //grabs from DB
       tasks = data;
       // console.log("THIS IS TASKS********",tasks);
   }).then(() => {
-    const appString = renderToString(<App tasks={tasks} />);
-    const indexFile = path.resolve('../to-do-app original/public/index.html');
-    fs.readFile(indexFile, 'utf8', (err, data) => {
-      if (err) {
-        console.error('Something went wrong:', err);
-        return res.status(500).send('Oops, better luck next time!');
-      }
-      return res.send(
-        data.replace('<div id="root"></div>', `<div id="root">${appString}</div>`)
-      );  
-    });
+    const css = new Set() // CSS for all rendered React components
+    const insertCss = (...styles) => styles.forEach(style => css.add(style._getCss()))
+    const appString = renderToString(
+    <StyleContext.Provider value={{ insertCss }}>
+      <App tasks={tasks} />
+    </StyleContext.Provider>);
+    const indexFile = 
+    `
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="utf-8">
+        <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="theme-color" content="#000000">
+        <style>${[...css].join('')}</style>
+        <title>React App</title>
+      </head>
+      <body>
+        <noscript>
+          You need to enable JavaScript to run this app.
+        </noscript>
+        <div id="root">${appString}</div>
+
+      </body>
+    </html>
+  `;
+  res.status(200).send(indexFile);
+    // const indexFile = path.resolve('../to-do-app original/public/index.html');
+    // fs.readFile(indexFile, 'utf8', (err, data) => {
+    //   if (err) {
+    //     console.error('Something went wrong:', err);
+    //     return res.status(500).send('Oops, better luck next time!');
+    //   }
+    //   return res.send(
+    //     data.replace('<div id="root"></div>', `<div id="root">${appString}</div>`)
+    //   );  
+    // });
   }).catch(err => {
     console.log(err, 'THIS IS A GET PROMISE ERROR')
   })
@@ -66,17 +94,44 @@ app.post('/', function(req, res){ //database endpoint; submits data from user in
       console.log('THIS IS TASKS******', tasks)
      })
     .then(() => {
-      const appString = renderToString(<App tasks={tasks} />);
-      const indexFile = path.resolve('../to-do-app original/public/index.html');
-      fs.readFile(indexFile, 'utf8', (err, data) => {
-        if (err) {
-          console.error('Something went wrong:', err);
-          return res.status(500).send('Oops, better luck next time!');
-        }
-        return res.send(
-          data.replace('<div id="root"></div>', `<div id="root">${appString}</div>`)
-        );  
-      })
+      const css = new Set() // CSS for all rendered React components
+      const insertCss = (...styles) => styles.forEach(style => css.add(style._getCss()))
+      const appString = renderToString(
+        <StyleContext.Provider value={{ insertCss }}>
+          <App tasks={tasks} />
+        </StyleContext.Provider>
+      );
+      const indexFile = `
+        <!DOCTYPE html>
+        <html lang="en">
+          <head>
+            <meta charset="utf-8">
+            <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <meta name="theme-color" content="#000000">
+            <style>${[...css].join('')}</style>
+            <title>React App</title>
+          </head>
+          <body>
+            <noscript>
+              You need to enable JavaScript to run this app.
+            </noscript>
+            <div id="root">${appString}</div>
+
+          </body>
+        </html>
+      `;
+      res.status(200).send(indexFile);     
+      // const indexFile = path.resolve('../to-do-app original/public/index.html');
+      // fs.readFile(indexFile, 'utf8', (err, data) => {
+      //   if (err) {
+      //     console.error('Something went wrong:', err);
+      //     return res.status(500).send('Oops, better luck next time!');
+      //   }
+      //   return res.send(
+      //     data.replace('<div id="root"></div>', `<div id="root">${appString}</div>`)
+      //   );  
+      // })
     }).catch(err => {
       console.log(err, 'THIS IS A POST PROMISE ERROR')
     })
@@ -98,17 +153,43 @@ app.delete('/tasks/:id', function (req, res) {
         console.log(data)
         tasks = data; })
       .then(() => {
-        const appString = renderToString(<App tasks={tasks} />);
-        const indexFile = path.resolve('../to-do-app original/public/index.html');
-        fs.readFile(indexFile, 'utf8', (err, data) => {
-          if (err) {
-            console.error('Something went wrong:', err);
-            return res.status(500).send('Oops, better luck next time!');
-          }
-          return res.send(
-            data.replace('<div id="root"></div>', `<div id="root">${appString}</div>`)
-          );  
-        });
+        const css = new Set() // CSS for all rendered React components
+        const insertCss = (...styles) => styles.forEach(style => css.add(style._getCss()))
+        const appString = renderToString(
+        <StyleContext.Provider value={{ insertCss }}>
+          <App tasks={tasks} />
+        </StyleContext.Provider>);
+        const indexFile = `
+        <!DOCTYPE html>
+        <html lang="en">
+          <head>
+            <meta charset="utf-8">
+            <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <meta name="theme-color" content="#000000">
+            <style>${[...css].join('')}</style>
+            <title>React App</title>
+          </head>
+          <body>
+            <noscript>
+              You need to enable JavaScript to run this app.
+            </noscript>
+            <div id="root">${appString}</div>
+
+          </body>
+        </html>
+      `;
+      res.status(200).send(indexFile);
+        // const indexFile = path.resolve('../to-do-app original/public/index.html');
+        // fs.readFile(indexFile, 'utf8', (err, data) => {
+        //   if (err) {
+        //     console.error('Something went wrong:', err);
+        //     return res.status(500).send('Oops, better luck next time!');
+        //   }
+        //   return res.send(
+        //     data.replace('<div id="root"></div>', `<div id="root">${appString}</div>`)
+        //   );  
+        // });
       }).catch(err => {
         console.log(err, 'THIS IS A DELETE PROMISE ERROR')
       })
