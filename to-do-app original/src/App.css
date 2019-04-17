@@ -1,4 +1,7 @@
 body {
-  background-color:white;
+  background-color:blueviolet;
 }
 
+.title {
+  font-size: 3rem;
+}

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import Alert from './Alert.js'
-
+import Alert from './Alert.js';
+import ReactDOM from "react-dom";
+import Button from '@material-ui/core/Button';
 // export default class Form extends React.Component { //stateful component
 
 const Form = props => {
@@ -11,8 +12,7 @@ const Form = props => {
             <input name="time" type="datetime-local" onChange = {props.time} /> <br></br>
             <input name="number" type="text" onChange = {props.number} placeholder='Type your number'/> 
         {/* <Alert onChange={props.handleChangeInput} />    */}
-        <button onClick={props.onSubmit} >Submit</button>
-        
+        <Button onClick={props.onSubmit} variant="contained" color="primary" >Submit</Button>
         </form>
         </div>
         

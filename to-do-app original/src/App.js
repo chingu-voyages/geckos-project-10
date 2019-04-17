@@ -35,3 +35,4 @@ class App extends Component {
 }
 
 export default withStyles(style)(App);
+// export default App;
