@@ -1,34 +1,36 @@
 import React, { Component } from "react";
+import Button from "@material-ui/core/Button";
 
 const Task = props => {
-  {
-    var key = 0;
-  }
+  // {
+  //   var key = 0;
+  // }
 
   // console.log('THIS IS PROPS', props.tasks)
 
-  var widthStyle = {
-    width: "auto",
-    display: "inline"
-  };
-
   return (
     <div>
-      <ol style={{ display: "inline-block" }}>
+      <ol>
         {props.tasks.map(entry => {
           return (
-            <div style={widthStyle}>
+            <div id="task-container">
               <li>
                 <form
-                  style={{ display: "inline" }}
                   method="POST"
                   action={`/tasks/${entry._id}?_method=DELETE`}
                 >
-                  <span style={{ display: "inline" }} key={entry._id}>
-                    {" "}
+                  <span key={entry._id}>
+                    {/* {" "} */}
                     {entry.task} {entry.time.toString().split("G")[0]}
                   </span>
-                  <button>Delete</button>
+                  <Button
+                    type="submit"
+                    variant="contained"
+                    color="secondary"
+                    size="small"
+                  >
+                    X
+                  </Button>
                 </form>
               </li>
             </div>

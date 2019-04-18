@@ -1,7 +1,18 @@
 body {
-  background-color:blueviolet;
+  background-color: yellowgreen;
 }
 
 .title {
   font-size: 3rem;
+}
+
+#submit-button {
+  color: white;
+  background-color: lightseagreen;
+  display: block;
+}
+
+#task-container {
+  margin: 0 auto;
+  display: flex;
 }
