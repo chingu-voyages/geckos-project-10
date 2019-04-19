@@ -1,18 +1,45 @@
 body {
-  background-color: yellowgreen;
+  background-color: white;
 }
 
-.title {
+h1{
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
   font-size: 3rem;
 }
 
 #submit-button {
   color: white;
   background-color: lightseagreen;
-  display: block;
+  display: inline-block;
 }
 
 #task-container {
   margin: 0 auto;
   display: flex;
+}
+
+.title-container{
+  line-height: 300px;
+  margin: 0;
+  height: 350px;
+  background-repeat:no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,0.4724264705882353) 100%);
+}
+
+#task-form{
+  display: flex;
+  justify-content: center;
+}
+
+li{
+  font-size: 1.5rem;
+  padding-top: 20px;
+}
+
+.userTask{
+  text-align: left;
 }

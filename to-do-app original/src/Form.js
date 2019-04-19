@@ -6,16 +6,17 @@ import TextField from "@material-ui/core/TextField";
 // export default class Form extends React.Component { //stateful component
 
 const Form = props => {
+
   return (
-    <div>
+    <div id='task-form'>
       <form method="POST" action={`/tasks`}>
         <TextField
           required
+          className=''
           margin="normal"
           variant="outlined"
           name="task"
           type="text"
-          // onChange={props.onChange}
           placeholder="Type your task"
         />
         <TextField
@@ -36,6 +37,7 @@ const Form = props => {
           margin="normal"
           variant="outlined"
         />
+        <br />
         <Button
           id="submit-button"
           type="submit"

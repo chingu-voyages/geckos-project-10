@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Form from "./Form.js";
 import Task from "./Task.js";
 import style from "./App.css";
+import Title from './Title.js';
 import withStyles from "isomorphic-style-loader/withStyles";
 
 const mainDiv = {
@@ -19,10 +20,9 @@ class App extends Component {
   render() {
     return (
       <div style={mainDiv}>
-        <h1 className="title" style={{ textAlign: "center" }}>
-          To Do List
-        </h1>
-
+        
+      
+        <Title />
         <Form />
         <Task tasks={this.state.tasks} />
       </div>
