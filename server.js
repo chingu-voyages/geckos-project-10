@@ -1,5 +1,5 @@
 import React from "react";
-import App from "../src/App.js";
+import App from "./src/App.js";
 import { renderToString } from "react-dom/server";
 import StyleContext from "isomorphic-style-loader/StyleContext";
 import { SheetsRegistry } from "jss";
@@ -20,7 +20,7 @@ const app = express();
 const methodOverride = require("method-override");
 const http = require("http");
 const cron = require("node-cron");
-const TaskDB = require("../database/database.js");
+const TaskDB = require("./database/database.js");
 const schedulerFactory = require("./schedulerFactory.js");
 const port = process.env.PORT || 3000;
 

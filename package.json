@@ -23,7 +23,8 @@
     "yarn-install": "^1.0.0"
   },
   "scripts": {
-    "start": "webpack-dev-server --config webpack.dev.js --progress --colors",
+    "start": "node index.js",
+    "dev": "webpack-dev-server --config webpack.dev.js --progress --colors",
     "build": "webpack --config webpack.prod.js --progress --colors",
     "build-server": "webpack --config webpack.server.js --progress --colors",
     "server": "node server/index.js"

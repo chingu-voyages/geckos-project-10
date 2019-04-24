@@ -1,4 +1,4 @@
-const TaskDB = require('../database/database.js')
+const TaskDB = require('./database/database.js')
 
 const notificationWorkerFactory = function() {
     return {
