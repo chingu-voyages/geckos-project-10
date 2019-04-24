@@ -22,7 +22,8 @@
     "yarn-install": "^1.0.0"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "build": "webpack --config webpack.server.js"
   },
   "devDependencies": {
     "@babel/core": "^7.4.0",

@@ -3,9 +3,9 @@ const mongoose = require("mongoose");
 const moment = require('moment');
 const Twilio = require('twilio');
 
-
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://localhost:27017/to-do-app-original",  {useNewUrlParser: true}); //creating the database
+// mongoose.connect("mongodb://localhost:27017/to-do-app-original",  {useNewUrlParser: true}); //creating the database
+mongoose.connect("mongodb+srv://sjl:Kumquat1!@ssr-todo-app-jvm4p.mongodb.net/ssr-todo-app", {useNewUrlParser: true});
 
 var nameSchema =  mongoose.Schema({
   task: String,
