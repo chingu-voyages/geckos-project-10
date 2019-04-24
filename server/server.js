@@ -22,6 +22,7 @@ const http = require("http");
 const cron = require("node-cron");
 const TaskDB = require("../database/database.js");
 const schedulerFactory = require("./schedulerFactory.js");
+const port = process.env.PORT || 3000;
 
 // const accountSid = 'AC019a30196451142d27d879a8f687f3cc';
 // const authToken = '978f64b17f1149a06b5f1a84c6fe1bf4';
@@ -275,7 +276,7 @@ app.delete("/tasks/:id", function(req, res) {
 
 schedulerFactory.start();
 
-app.listen(8080);
-console.log("Node server running on port 8080");
+app.listen(port);
+console.log("Node server running on port ",port);
 
 // module.exports = schedulerFactory();

@@ -1,4 +1,11 @@
 {
-    "presets": ["@babel/preset-env", "react-app"] //@babel/oreset-env is the new version. Env is the old version
-  }
-  
+  "presets": [
+    "@babel/preset-env",
+    "@babel/preset-react"
+  ],
+  "plugins": [
+    "@babel/plugin-proposal-class-properties",
+    "react-hot-loader/babel",
+    "@babel/plugin-syntax-dynamic-import"
+  ]
+}
