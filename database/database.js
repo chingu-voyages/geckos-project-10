@@ -1,8 +1,10 @@
-const {accountSid, authToken} = require('../src/config/twilio.js');
 const mongoose = require("mongoose");
 const moment = require('moment');
 const Twilio = require('twilio');
 
+const accountSid = process.env.TWILIO_SID,
+      authToken = process.env.TWILIO_AUTHTOKEN;
+      
 mongoose.Promise = global.Promise;
 // mongoose.connect("mongodb://localhost:27017/to-do-app-original",  {useNewUrlParser: true}); //creating the database
 mongoose.connect("mongodb+srv://sjl:Kumquat1!@ssr-todo-app-jvm4p.mongodb.net/ssr-todo-app", {useNewUrlParser: true});
