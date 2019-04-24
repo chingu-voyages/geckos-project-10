@@ -3,11 +3,12 @@ const moment = require('moment');
 const Twilio = require('twilio');
 
 const accountSid = process.env.TWILIO_SID,
-      authToken = process.env.TWILIO_AUTHTOKEN;
-      
+      authToken = process.env.TWILIO_AUTHTOKEN,
+      mongoPW = process.env.MONGO_PW;
+
 mongoose.Promise = global.Promise;
 // mongoose.connect("mongodb://localhost:27017/to-do-app-original",  {useNewUrlParser: true}); //creating the database
-mongoose.connect("mongodb+srv://sjl:Kumquat1!@ssr-todo-app-jvm4p.mongodb.net/ssr-todo-app", {useNewUrlParser: true});
+mongoose.connect(`mongodb+srv://sjl:${mongoPW}@ssr-todo-app-jvm4p.mongodb.net/ssr-todo-app`, {useNewUrlParser: true});
 
 var nameSchema =  mongoose.Schema({
   task: String,
