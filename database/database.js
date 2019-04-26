@@ -1,40 +1,48 @@
 const mongoose = require("mongoose");
 const moment = require('moment');
 const Twilio = require('twilio');
-
-const accountSid = process.env.TWILIO_SID,
-      authToken = process.env.TWILIO_AUTHTOKEN,
+// const accountSid = 'AC019a30196451142d27d879a8f687f3cc';
+// const authToken = '978f64b17f1149a06b5f1a84c6fe1bf4';
+const accountSid = process.env.TWILIO_SID || 'AC019a30196451142d27d879a8f687f3cc',
+      authToken = process.env.TWILIO_AUTHTOKEN || '978f64b17f1149a06b5f1a84c6fe1bf4',
       mongoPW = process.env.MONGO_PW;
 
 mongoose.Promise = global.Promise;
-// mongoose.connect("mongodb://localhost:27017/to-do-app-original",  {useNewUrlParser: true}); //creating the database
-mongoose.connect(`mongodb+srv://sjl:${mongoPW}@ssr-todo-app-jvm4p.mongodb.net/ssr-todo-app`, {useNewUrlParser: true});
+mongoose.connect("mongodb://localhost:27017/to-do-app-original",  {useNewUrlParser: true}); //creating the database
+// mongoose.connect(`mongodb+srv://sjl:${mongoPW}@ssr-todo-app-jvm4p.mongodb.net/ssr-todo-app`, {useNewUrlParser: true});
 
 var nameSchema =  mongoose.Schema({
   task: String,
   number: String, 
   notification: Number,
   time : {type : Date, index : true}
-}, {
+  },
+  {
    versionKey: false
  });
 
+//  console.log('MOMENT\n',moment(this.time))
+//  console.log(moment(this.time).tz("America/Los_Angeles"))
+//  console.log('MOMENT END\n',moment(this.time).tz("America/Los_Angeles")).utc();
 
 
 nameSchema.methods.requiresNotification = function(date) {
   const taskDueTime = moment(this.time).tz("America/Los_Angeles").format('LLL');
   const currentTime = moment(date).tz("America/Los_Angeles").format('LLL');
+  
   console.log('*database entry time*\n', taskDueTime);
   console.log('*current time*\n', currentTime);
-  console.log('*difference in time\n', Math.round(moment.duration(moment(this.time).tz("America/Los_Angeles").utc().diff(moment(date).tz("America/Los_Angeles").utc())).asMinutes()))
+  // console.log('*difference in time\n', Math.round(moment.duration(moment(this.time).tz("America/Los_Angeles").utc().diff(moment(date).tz("America/Los_Angeles").utc())).asMinutes()))
+  console.log('*difference in time\n', Math.round(moment.duration(moment(this.time).utc().diff(moment(date).utc())).asMinutes()))
   const minutesBeforeText = 0;
   // Return difference of taskeDueTime and currentTime is equal to minutesBeforeText
-  return Math.round(moment.duration(moment(this.time).tz("America/Los_Angeles").utc().diff(moment(date).tz("America/Los_Angeles").utc())).asMinutes()) === minutesBeforeText;
+  // return Math.round(moment.duration(moment(this.time).tz("America/Los_Angeles").utc().diff(moment(date).tz("America/Los_Angeles").utc())).asMinutes()) === minutesBeforeText;
+  return Math.round(moment.duration(moment(this.time).diff(moment(date))).asMinutes()) === minutesBeforeText;
 };
 
 nameSchema.statics.sendNotifications = function(callback) {
   // now
-  const searchDate = new Date();
+  const searchDate = new Date(); //utc on heroku unless we specify timezone on heroku via TZ = timezone Config Variable
   TaskDB
     .find()
     .then(function(tasks) {
