@@ -4,6 +4,7 @@ import ReactDOM from "react-dom";
 import Menu from "./DropDown";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
+import MenuItem from "@material-ui/core/MenuItem";
 // export default class Form extends React.Component { //stateful component
 
 const Form = props => {
@@ -75,12 +76,21 @@ const Form = props => {
           margin="normal"
           variant="outlined"
         />
-        <select>
-          <option type="text" name="currentTime" value="volvo">Volvo</option>
-          <option type="text" name="currentTime" value="saab">Saab</option>
-          <option type="text" name="currentTime" value="opel">Opel</option>
-          <option type="text" name="currentTime" value="audi">Audi</option>
-        </select>
+        <TextField
+          required
+          select
+          name="timezone"
+          margin="normal"
+          variant="outlined"
+          helperText='your timezone'
+          SelectProps={{
+            native: true
+          }}
+        >
+          <option value="PDT">Pacific Time</option>
+          <option value="CDT">Central Time</option>
+          <option value="EDT">Eastern Time</option>
+        </TextField>
         {/* <div className="radio">
           <label>
             <input type="radio" value="eastern" checked={false} />

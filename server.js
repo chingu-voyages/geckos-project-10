@@ -116,7 +116,7 @@ app.get("/", function(req, res) {
 app.post("/tasks", function(req, res) {
   //database endpoint; submits data from user input
   // let tasks;
-  console.log(res.body, "RES.BODY");
+  // console.log(res.body, "RES.BODY");
   console.log(req.body, "REQ.BODY");
   // req.body = {
   //   task : 'to dooo',

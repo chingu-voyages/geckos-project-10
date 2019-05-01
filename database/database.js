@@ -28,14 +28,14 @@ var nameSchema =  mongoose.Schema({
 
 
 nameSchema.methods.requiresNotification = function(date) {
+  // NOT USED IN CODE.ONLY FOR CONSOLE LOG REFERENCE
   const taskDueTime = moment(this.time).tz("America/Los_Angeles").format('LLL');
   const pacificTime = "Los_Angeles";
-  const centralTime = "";
   const currentTime = moment(date).tz("America/Los_Angeles").format('LLL');
-  
-  // console.log('*database entry time*\n', taskDueTime);
-  // console.log('*current time*\n', currentTime);
+  console.log('*database entry time*\n', taskDueTime);
+  console.log('*current time*\n', currentTime);
   // console.log('*difference in time\n', Math.round(moment.duration(moment(this.time).tz("America/Los_Angeles").utc().diff(moment(date).tz("America/Los_Angeles").utc())).asMinutes()))
+  
   console.log('*difference in time\n', Math.round(moment.duration(moment(this.time).utc().diff(moment(date).utc())).asMinutes()))
   const minutesBeforeText = 0;
   // Return difference of taskeDueTime and currentTime is equal to minutesBeforeText

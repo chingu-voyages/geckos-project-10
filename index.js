@@ -93,21 +93,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _src_App_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
-/* harmony import */ var react_dom_server__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(17);
+/* harmony import */ var react_dom_server__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(18);
 /* harmony import */ var react_dom_server__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_dom_server__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var isomorphic_style_loader_StyleContext__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(18);
+/* harmony import */ var isomorphic_style_loader_StyleContext__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(19);
 /* harmony import */ var isomorphic_style_loader_StyleContext__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(isomorphic_style_loader_StyleContext__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var jss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(19);
+/* harmony import */ var jss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(20);
 /* harmony import */ var jss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(jss__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var react_jss_lib_JssProvider__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(20);
+/* harmony import */ var react_jss_lib_JssProvider__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(21);
 /* harmony import */ var react_jss_lib_JssProvider__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_jss_lib_JssProvider__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(21);
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(22);
 /* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _material_ui_core_colors_green__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(22);
+/* harmony import */ var _material_ui_core_colors_green__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(23);
 /* harmony import */ var _material_ui_core_colors_green__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_colors_green__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _material_ui_core_colors_red__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(23);
+/* harmony import */ var _material_ui_core_colors_red__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(24);
 /* harmony import */ var _material_ui_core_colors_red__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_colors_red__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _material_ui_core_colors_yellow__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(24);
+/* harmony import */ var _material_ui_core_colors_yellow__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(25);
 /* harmony import */ var _material_ui_core_colors_yellow__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_colors_yellow__WEBPACK_IMPORTED_MODULE_9__);
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
 
@@ -128,27 +128,27 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 
 
 
-var express = __webpack_require__(25);
+var express = __webpack_require__(26);
 
-var bodyParser = __webpack_require__(26);
+var bodyParser = __webpack_require__(27);
 
-var path = __webpack_require__(27);
+var path = __webpack_require__(28);
 
 var app = express();
 
-var methodOverride = __webpack_require__(28);
+var methodOverride = __webpack_require__(29);
 
-var http = __webpack_require__(29);
+var http = __webpack_require__(30);
 
-var cron = __webpack_require__(30);
+var cron = __webpack_require__(31);
 
-var TaskDB = __webpack_require__(31);
+var TaskDB = __webpack_require__(32);
 
-var schedulerFactory = __webpack_require__(35);
+var schedulerFactory = __webpack_require__(36);
 
 var port = process.env.PORT || 3000;
 
-var moment = __webpack_require__(33);
+var moment = __webpack_require__(34);
 
 var test = new Date(); // console.log(test);
 // console.log(moment.utc(test).format());
@@ -219,7 +219,7 @@ app.get("/", function (req, res) {
 app.post("/tasks", function (req, res) {
   //database endpoint; submits data from user input
   // let tasks;
-  console.log(res.body, "RES.BODY");
+  // console.log(res.body, "RES.BODY");
   console.log(req.body, "REQ.BODY"); // req.body = {
   //   task : 'to dooo',
   //   time: {date},
@@ -278,11 +278,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Form_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
-/* harmony import */ var _Task_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(10);
-/* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(11);
+/* harmony import */ var _Task_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(11);
+/* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(12);
 /* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_App_css__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _Title_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(15);
-/* harmony import */ var isomorphic_style_loader_withStyles__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(16);
+/* harmony import */ var _Title_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(16);
+/* harmony import */ var isomorphic_style_loader_withStyles__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(17);
 /* harmony import */ var isomorphic_style_loader_withStyles__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(isomorphic_style_loader_withStyles__WEBPACK_IMPORTED_MODULE_5__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -361,9 +361,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(9);
 /* harmony import */ var _material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(10);
+/* harmony import */ var _material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_6__);
 var _this = undefined;
 
 function _readOnlyError(name) { throw new Error("\"" + name + "\" is read-only"); }
+
 
 
 
@@ -441,23 +444,23 @@ var Form = function Form(props) {
     placeholder: "Type your number",
     margin: "normal",
     variant: "outlined"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-    type: "text",
-    name: "currentTime",
-    value: "volvo"
-  }, "Volvo"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-    type: "text",
-    name: "currentTime",
-    value: "saab"
-  }, "Saab"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-    type: "text",
-    name: "currentTime",
-    value: "opel"
-  }, "Opel"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-    type: "text",
-    name: "currentTime",
-    value: "audi"
-  }, "Audi")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4___default.a, {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_5___default.a, {
+    required: true,
+    select: true,
+    name: "timezone",
+    margin: "normal",
+    variant: "outlined",
+    helperText: "your timezone",
+    SelectProps: {
+      "native": true
+    }
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "PDT"
+  }, "Pacific Time"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "CDT"
+  }, "Central Time"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "EDT"
+  }, "Eastern Time")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4___default.a, {
     id: "submit-button",
     type: "submit",
     variant: "contained",
@@ -570,6 +573,12 @@ module.exports = require("@material-ui/core/TextField");
 
 /***/ }),
 /* 10 */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/MenuItem");
+
+/***/ }),
+/* 11 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -607,13 +616,13 @@ var Task = function Task(props) {
 /* harmony default export */ __webpack_exports__["default"] = (Task);
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
     var refs = 0;
-    var css = __webpack_require__(12);
-    var insertCss = __webpack_require__(14);
+    var css = __webpack_require__(13);
+    var insertCss = __webpack_require__(15);
     var content = typeof css === 'string' ? [[module.i, css, '']] : css;
 
     exports = module.exports = css.locals || {};
@@ -628,17 +637,17 @@ var Task = function Task(props) {
   
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(13)(false);
+exports = module.exports = __webpack_require__(14)(false);
 // Module
 exports.push([module.i, "body {\r\n  background-color: white;\r\n}\r\n\r\nh1{\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  line-height: normal;\r\n  font-size: 3rem;\r\n}\r\n\r\n#submit-button {\r\n  color: white;\r\n  background-color: lightseagreen;\r\n  display: inline-block;\r\n}\r\n\r\n#task-container {\r\n  margin: 0 auto;\r\n  display: flex;\r\n}\r\n\r\n.title-container{\r\n  line-height: 300px;\r\n  margin: 0;\r\n  height: 350px;\r\n  background-repeat:no-repeat;\r\n  background-position: center center;\r\n  background-size: cover;\r\n  background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,0.4724264705882353) 100%);\r\n}\r\n\r\n#task-form{\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\n\r\nli{\r\n  font-size: 1.5rem;\r\n  padding-top: 20px;\r\n}\r\n\r\n.userTask{\r\n  text-align: left;\r\n}\r\n\r\n/* dropdown timezone menu */\r\n\r\n", ""]);
 
 
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -729,7 +738,7 @@ function toComment(sourceMap) {
 }
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -829,7 +838,7 @@ module.exports = insertCss;
 
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -850,104 +859,104 @@ var Title = function Title(props) {
 /* harmony default export */ __webpack_exports__["default"] = (Title);
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports) {
 
 module.exports = require("isomorphic-style-loader/withStyles");
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-dom/server");
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports) {
 
 module.exports = require("isomorphic-style-loader/StyleContext");
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports) {
 
 module.exports = require("jss");
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-jss/lib/JssProvider");
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports) {
 
 module.exports = require("@material-ui/core/styles");
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports) {
 
 module.exports = require("@material-ui/core/colors/green");
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, exports) {
 
 module.exports = require("@material-ui/core/colors/red");
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports) {
 
 module.exports = require("@material-ui/core/colors/yellow");
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, exports) {
 
 module.exports = require("express");
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ (function(module, exports) {
 
 module.exports = require("body-parser");
 
 /***/ }),
-/* 27 */
+/* 28 */
 /***/ (function(module, exports) {
 
 module.exports = require("path");
 
 /***/ }),
-/* 28 */
+/* 29 */
 /***/ (function(module, exports) {
 
 module.exports = require("method-override");
 
 /***/ }),
-/* 29 */
+/* 30 */
 /***/ (function(module, exports) {
 
 module.exports = require("http");
 
 /***/ }),
-/* 30 */
+/* 31 */
 /***/ (function(module, exports) {
 
 module.exports = require("node-cron");
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var mongoose = __webpack_require__(32);
+var mongoose = __webpack_require__(33);
 
-var moment = __webpack_require__(33);
+var moment = __webpack_require__(34);
 
-var Twilio = __webpack_require__(34); // const accountSid = 'AC019a30196451142d27d879a8f687f3cc';
+var Twilio = __webpack_require__(35); // const accountSid = 'AC019a30196451142d27d879a8f687f3cc';
 // const authToken = '978f64b17f1149a06b5f1a84c6fe1bf4';
 
 
@@ -976,12 +985,12 @@ var nameSchema = mongoose.Schema({
 //  console.log('MOMENT END\n',moment(this.time).tz("America/Los_Angeles")).utc();
 
 nameSchema.methods.requiresNotification = function (date) {
+  // NOT USED IN CODE.ONLY FOR CONSOLE LOG REFERENCE
   var taskDueTime = moment(this.time).tz("America/Los_Angeles").format('LLL');
   var pacificTime = "Los_Angeles";
-  var centralTime = "";
-  var currentTime = moment(date).tz("America/Los_Angeles").format('LLL'); // console.log('*database entry time*\n', taskDueTime);
-  // console.log('*current time*\n', currentTime);
-  // console.log('*difference in time\n', Math.round(moment.duration(moment(this.time).tz("America/Los_Angeles").utc().diff(moment(date).tz("America/Los_Angeles").utc())).asMinutes()))
+  var currentTime = moment(date).tz("America/Los_Angeles").format('LLL');
+  console.log('*database entry time*\n', taskDueTime);
+  console.log('*current time*\n', currentTime); // console.log('*difference in time\n', Math.round(moment.duration(moment(this.time).tz("America/Los_Angeles").utc().diff(moment(date).tz("America/Los_Angeles").utc())).asMinutes()))
 
   console.log('*difference in time\n', Math.round(moment.duration(moment(this.time).utc().diff(moment(date).utc())).asMinutes()));
   var minutesBeforeText = 0; // Return difference of taskeDueTime and currentTime is equal to minutesBeforeText
@@ -1043,32 +1052,32 @@ var TaskDB = mongoose.model("task", nameSchema);
 module.exports = TaskDB;
 
 /***/ }),
-/* 32 */
+/* 33 */
 /***/ (function(module, exports) {
 
 module.exports = require("mongoose");
 
 /***/ }),
-/* 33 */
+/* 34 */
 /***/ (function(module, exports) {
 
 module.exports = require("moment");
 
 /***/ }),
-/* 34 */
+/* 35 */
 /***/ (function(module, exports) {
 
 module.exports = require("twilio");
 
 /***/ }),
-/* 35 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var CronJob = __webpack_require__(36).CronJob;
+var CronJob = __webpack_require__(37).CronJob;
 
-var notificationWorkerFactory = __webpack_require__(37);
+var notificationWorkerFactory = __webpack_require__(38);
 
-var moment = __webpack_require__(33);
+var moment = __webpack_require__(34);
 
 var schedulerFactory = function schedulerFactory() {
   return {
@@ -1084,16 +1093,16 @@ var schedulerFactory = function schedulerFactory() {
 module.exports = schedulerFactory();
 
 /***/ }),
-/* 36 */
+/* 37 */
 /***/ (function(module, exports) {
 
 module.exports = require("cron");
 
 /***/ }),
-/* 37 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var TaskDB = __webpack_require__(31);
+var TaskDB = __webpack_require__(32);
 
 var notificationWorkerFactory = function notificationWorkerFactory() {
   return {
