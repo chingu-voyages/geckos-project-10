@@ -93,21 +93,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _src_App_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
-/* harmony import */ var react_dom_server__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(15);
+/* harmony import */ var react_dom_server__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(17);
 /* harmony import */ var react_dom_server__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_dom_server__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var isomorphic_style_loader_StyleContext__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(16);
+/* harmony import */ var isomorphic_style_loader_StyleContext__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(18);
 /* harmony import */ var isomorphic_style_loader_StyleContext__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(isomorphic_style_loader_StyleContext__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var jss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(17);
+/* harmony import */ var jss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(19);
 /* harmony import */ var jss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(jss__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var react_jss_lib_JssProvider__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(18);
+/* harmony import */ var react_jss_lib_JssProvider__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(20);
 /* harmony import */ var react_jss_lib_JssProvider__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_jss_lib_JssProvider__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(19);
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(21);
 /* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _material_ui_core_colors_green__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(20);
+/* harmony import */ var _material_ui_core_colors_green__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(22);
 /* harmony import */ var _material_ui_core_colors_green__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_colors_green__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _material_ui_core_colors_red__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(21);
+/* harmony import */ var _material_ui_core_colors_red__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(23);
 /* harmony import */ var _material_ui_core_colors_red__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_colors_red__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _material_ui_core_colors_yellow__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(22);
+/* harmony import */ var _material_ui_core_colors_yellow__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(24);
 /* harmony import */ var _material_ui_core_colors_yellow__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_colors_yellow__WEBPACK_IMPORTED_MODULE_9__);
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
 
@@ -128,30 +128,30 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 
 
 
-var express = __webpack_require__(23);
+var express = __webpack_require__(25);
 
-var bodyParser = __webpack_require__(24);
+var bodyParser = __webpack_require__(26);
 
-var path = __webpack_require__(25);
+var path = __webpack_require__(27);
 
 var app = express();
 
-var methodOverride = __webpack_require__(26);
+var methodOverride = __webpack_require__(28);
 
-var http = __webpack_require__(27);
+var http = __webpack_require__(29);
 
-var cron = __webpack_require__(28);
+var cron = __webpack_require__(30);
 
-var TaskDB = __webpack_require__(29);
+var TaskDB = __webpack_require__(31);
 
-var schedulerFactory = __webpack_require__(33);
+var schedulerFactory = __webpack_require__(35);
 
-var port = process.env.PORT || 3005;
+var port = process.env.PORT || 3000;
 
-var moment = __webpack_require__(31);
+var moment = __webpack_require__(33);
 
-var test = new Date();
-console.log(test); // console.log(moment.utc(test).format());
+var test = new Date(); // console.log(test);
+// console.log(moment.utc(test).format());
 // const MessagingResponse = require('twilio').twiml.MessagingResponse;
 
 app.use(methodOverride("_method"));
@@ -219,7 +219,8 @@ app.get("/", function (req, res) {
 app.post("/tasks", function (req, res) {
   //database endpoint; submits data from user input
   // let tasks;
-  console.log(req.body, "*******"); // req.body = {
+  console.log(res.body, "RES.BODY");
+  console.log(req.body, "REQ.BODY"); // req.body = {
   //   task : 'to dooo',
   //   time: {date},
   //   timezone: 'EST'
@@ -277,11 +278,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Form_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
-/* harmony import */ var _Task_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8);
-/* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9);
+/* harmony import */ var _Task_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(10);
+/* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(11);
 /* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_App_css__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _Title_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(13);
-/* harmony import */ var isomorphic_style_loader_withStyles__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(14);
+/* harmony import */ var _Title_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(15);
+/* harmony import */ var isomorphic_style_loader_withStyles__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(16);
 /* harmony import */ var isomorphic_style_loader_withStyles__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(isomorphic_style_loader_withStyles__WEBPACK_IMPORTED_MODULE_5__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -355,10 +356,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Alert_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(6);
-/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7);
-/* harmony import */ var _material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _DropDown__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(6);
+/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8);
+/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(9);
+/* harmony import */ var _material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_5__);
+var _this = undefined;
+
+function _readOnlyError(name) { throw new Error("\"" + name + "\" is read-only"); }
+
+
 
 
 
@@ -366,12 +373,51 @@ __webpack_require__.r(__webpack_exports__);
  // export default class Form extends React.Component { //stateful component
 
 var Form = function Form(props) {
+  var toClose = false;
+
+  var toggle = function toggle(e) {
+    e.stopPropagation();
+    var btn = _this;
+    var menu = btn.nextSibling;
+
+    while (menu && menu.nodeType != 1) {
+      menu = menu.nextSibling;
+    }
+
+    if (!menu) return;
+
+    if (menu.style.display !== "block") {
+      menu.style.display = "block";
+      if (toClose) toClose.style.display = "none";
+      toClose = (_readOnlyError("toClose"), menu);
+    } else {
+      menu.style.display = "none";
+      toClose = (_readOnlyError("toClose"), false);
+    }
+  };
+
+  var closeAll = function closeAll() {
+    toClose.style.display = "none";
+  };
+
+  var addEventListener = ("DOMContentLoaded", function () {
+    document.querySelectorAll(".btn-buy-list").forEach(function (btn) {
+      btn.addEventListener("click", toggle, true);
+    });
+  });
+
+  var onclick = function onclick(event) {
+    if (toClose) {
+      closeAll.call(event.target);
+    }
+  };
+
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     id: "task-form"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
     method: "POST",
     action: "/tasks"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_4___default.a, {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_5___default.a, {
     required: true,
     className: "",
     margin: "normal",
@@ -379,7 +425,7 @@ var Form = function Form(props) {
     name: "task",
     type: "text",
     placeholder: "Type your task"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_4___default.a, {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_5___default.a, {
     required: true // label="Required"
     ,
     margin: "normal",
@@ -387,7 +433,7 @@ var Form = function Form(props) {
     name: "time",
     type: "datetime-local" // onChange={props.time}
 
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_4___default.a, {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_5___default.a, {
     required: true,
     name: "number",
     type: "text" // onChange={props.number}
@@ -395,7 +441,23 @@ var Form = function Form(props) {
     placeholder: "Type your number",
     margin: "normal",
     variant: "outlined"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3___default.a, {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    type: "text",
+    name: "currentTime",
+    value: "volvo"
+  }, "Volvo"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    type: "text",
+    name: "currentTime",
+    value: "saab"
+  }, "Saab"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    type: "text",
+    name: "currentTime",
+    value: "opel"
+  }, "Opel"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    type: "text",
+    name: "currentTime",
+    value: "audi"
+  }, "Audi")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4___default.a, {
     id: "submit-button",
     type: "submit",
     variant: "contained",
@@ -448,25 +510,73 @@ module.exports = require("react-dom");
 
 /***/ }),
 /* 6 */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-module.exports = require("@material-ui/core/Button");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+var Dropdown = __webpack_require__(7);
+
+var DropdownTrigger = Dropdown.DropdownTrigger;
+var DropdownContent = Dropdown.DropdownContent; // const Menu = () => {
+//   return (
+//     <div>
+//       <Dropdown>
+//         <DropdownTrigger>Profile</DropdownTrigger>
+//         <DropdownContent>
+//           Username
+//           <ul>
+//             <li>
+//               <a href="/profile">Profile</a>
+//             </li>
+//             <li>
+//               <a href="/favorites">Favorites</a>
+//             </li>
+//             <li>
+//               <a href="/logout">Log Out</a>
+//             </li>
+//           </ul>
+//         </DropdownContent>
+//       </Dropdown>
+//     </div>
+//     // <div>THIS IS MENU</div>
+//   );
+// };
+// export default Menu;
 
 /***/ }),
 /* 7 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/core/TextField");
+module.exports = require("react-simple-dropdown");
 
 /***/ }),
 /* 8 */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/Button");
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/TextField");
+
+/***/ }),
+/* 10 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6);
+/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8);
 /* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1__);
 
 
@@ -497,13 +607,13 @@ var Task = function Task(props) {
 /* harmony default export */ __webpack_exports__["default"] = (Task);
 
 /***/ }),
-/* 9 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
     var refs = 0;
-    var css = __webpack_require__(10);
-    var insertCss = __webpack_require__(12);
+    var css = __webpack_require__(12);
+    var insertCss = __webpack_require__(14);
     var content = typeof css === 'string' ? [[module.i, css, '']] : css;
 
     exports = module.exports = css.locals || {};
@@ -518,17 +628,17 @@ var Task = function Task(props) {
   
 
 /***/ }),
-/* 10 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(11)(false);
+exports = module.exports = __webpack_require__(13)(false);
 // Module
-exports.push([module.i, "body {\r\n  background-color: white;\r\n}\r\n\r\nh1{\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  line-height: normal;\r\n  font-size: 3rem;\r\n}\r\n\r\n#submit-button {\r\n  color: white;\r\n  background-color: lightseagreen;\r\n  display: inline-block;\r\n}\r\n\r\n#task-container {\r\n  margin: 0 auto;\r\n  display: flex;\r\n}\r\n\r\n.title-container{\r\n  line-height: 300px;\r\n  margin: 0;\r\n  height: 350px;\r\n  background-repeat:no-repeat;\r\n  background-position: center center;\r\n  background-size: cover;\r\n  background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,0.4724264705882353) 100%);\r\n}\r\n\r\n#task-form{\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\n\r\nli{\r\n  font-size: 1.5rem;\r\n  padding-top: 20px;\r\n}\r\n\r\n.userTask{\r\n  text-align: left;\r\n}", ""]);
+exports.push([module.i, "body {\r\n  background-color: white;\r\n}\r\n\r\nh1{\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  line-height: normal;\r\n  font-size: 3rem;\r\n}\r\n\r\n#submit-button {\r\n  color: white;\r\n  background-color: lightseagreen;\r\n  display: inline-block;\r\n}\r\n\r\n#task-container {\r\n  margin: 0 auto;\r\n  display: flex;\r\n}\r\n\r\n.title-container{\r\n  line-height: 300px;\r\n  margin: 0;\r\n  height: 350px;\r\n  background-repeat:no-repeat;\r\n  background-position: center center;\r\n  background-size: cover;\r\n  background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,0.4724264705882353) 100%);\r\n}\r\n\r\n#task-form{\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\n\r\nli{\r\n  font-size: 1.5rem;\r\n  padding-top: 20px;\r\n}\r\n\r\n.userTask{\r\n  text-align: left;\r\n}\r\n\r\n/* dropdown timezone menu */\r\n\r\n", ""]);
 
 
 
 /***/ }),
-/* 11 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -619,7 +729,7 @@ function toComment(sourceMap) {
 }
 
 /***/ }),
-/* 12 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -719,7 +829,7 @@ module.exports = insertCss;
 
 
 /***/ }),
-/* 13 */
+/* 15 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -740,104 +850,104 @@ var Title = function Title(props) {
 /* harmony default export */ __webpack_exports__["default"] = (Title);
 
 /***/ }),
-/* 14 */
+/* 16 */
 /***/ (function(module, exports) {
 
 module.exports = require("isomorphic-style-loader/withStyles");
 
 /***/ }),
-/* 15 */
+/* 17 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-dom/server");
 
 /***/ }),
-/* 16 */
+/* 18 */
 /***/ (function(module, exports) {
 
 module.exports = require("isomorphic-style-loader/StyleContext");
 
 /***/ }),
-/* 17 */
+/* 19 */
 /***/ (function(module, exports) {
 
 module.exports = require("jss");
 
 /***/ }),
-/* 18 */
+/* 20 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-jss/lib/JssProvider");
 
 /***/ }),
-/* 19 */
+/* 21 */
 /***/ (function(module, exports) {
 
 module.exports = require("@material-ui/core/styles");
 
 /***/ }),
-/* 20 */
+/* 22 */
 /***/ (function(module, exports) {
 
 module.exports = require("@material-ui/core/colors/green");
 
 /***/ }),
-/* 21 */
+/* 23 */
 /***/ (function(module, exports) {
 
 module.exports = require("@material-ui/core/colors/red");
 
 /***/ }),
-/* 22 */
+/* 24 */
 /***/ (function(module, exports) {
 
 module.exports = require("@material-ui/core/colors/yellow");
 
 /***/ }),
-/* 23 */
+/* 25 */
 /***/ (function(module, exports) {
 
 module.exports = require("express");
 
 /***/ }),
-/* 24 */
+/* 26 */
 /***/ (function(module, exports) {
 
 module.exports = require("body-parser");
 
 /***/ }),
-/* 25 */
+/* 27 */
 /***/ (function(module, exports) {
 
 module.exports = require("path");
 
 /***/ }),
-/* 26 */
+/* 28 */
 /***/ (function(module, exports) {
 
 module.exports = require("method-override");
 
 /***/ }),
-/* 27 */
+/* 29 */
 /***/ (function(module, exports) {
 
 module.exports = require("http");
 
 /***/ }),
-/* 28 */
+/* 30 */
 /***/ (function(module, exports) {
 
 module.exports = require("node-cron");
 
 /***/ }),
-/* 29 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var mongoose = __webpack_require__(30);
+var mongoose = __webpack_require__(32);
 
-var moment = __webpack_require__(31);
+var moment = __webpack_require__(33);
 
-var Twilio = __webpack_require__(32); // const accountSid = 'AC019a30196451142d27d879a8f687f3cc';
+var Twilio = __webpack_require__(34); // const accountSid = 'AC019a30196451142d27d879a8f687f3cc';
 // const authToken = '978f64b17f1149a06b5f1a84c6fe1bf4';
 
 
@@ -854,6 +964,7 @@ var nameSchema = mongoose.Schema({
   task: String,
   number: String,
   notification: Number,
+  currentTime: String,
   time: {
     type: Date,
     index: true
@@ -866,9 +977,11 @@ var nameSchema = mongoose.Schema({
 
 nameSchema.methods.requiresNotification = function (date) {
   var taskDueTime = moment(this.time).tz("America/Los_Angeles").format('LLL');
-  var currentTime = moment(date).tz("America/Los_Angeles").format('LLL');
-  console.log('*database entry time*\n', taskDueTime);
-  console.log('*current time*\n', currentTime); // console.log('*difference in time\n', Math.round(moment.duration(moment(this.time).tz("America/Los_Angeles").utc().diff(moment(date).tz("America/Los_Angeles").utc())).asMinutes()))
+  var pacificTime = "Los_Angeles";
+  var centralTime = "";
+  var currentTime = moment(date).tz("America/Los_Angeles").format('LLL'); // console.log('*database entry time*\n', taskDueTime);
+  // console.log('*current time*\n', currentTime);
+  // console.log('*difference in time\n', Math.round(moment.duration(moment(this.time).tz("America/Los_Angeles").utc().diff(moment(date).tz("America/Los_Angeles").utc())).asMinutes()))
 
   console.log('*difference in time\n', Math.round(moment.duration(moment(this.time).utc().diff(moment(date).utc())).asMinutes()));
   var minutesBeforeText = 0; // Return difference of taskeDueTime and currentTime is equal to minutesBeforeText
@@ -930,32 +1043,32 @@ var TaskDB = mongoose.model("task", nameSchema);
 module.exports = TaskDB;
 
 /***/ }),
-/* 30 */
+/* 32 */
 /***/ (function(module, exports) {
 
 module.exports = require("mongoose");
 
 /***/ }),
-/* 31 */
+/* 33 */
 /***/ (function(module, exports) {
 
 module.exports = require("moment");
 
 /***/ }),
-/* 32 */
+/* 34 */
 /***/ (function(module, exports) {
 
 module.exports = require("twilio");
 
 /***/ }),
-/* 33 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var CronJob = __webpack_require__(34).CronJob;
+var CronJob = __webpack_require__(36).CronJob;
 
-var notificationWorkerFactory = __webpack_require__(35);
+var notificationWorkerFactory = __webpack_require__(37);
 
-var moment = __webpack_require__(31);
+var moment = __webpack_require__(33);
 
 var schedulerFactory = function schedulerFactory() {
   return {
@@ -971,16 +1084,16 @@ var schedulerFactory = function schedulerFactory() {
 module.exports = schedulerFactory();
 
 /***/ }),
-/* 34 */
+/* 36 */
 /***/ (function(module, exports) {
 
 module.exports = require("cron");
 
 /***/ }),
-/* 35 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var TaskDB = __webpack_require__(29);
+var TaskDB = __webpack_require__(31);
 
 var notificationWorkerFactory = function notificationWorkerFactory() {
   return {

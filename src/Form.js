@@ -1,18 +1,56 @@
 import React, { Component } from "react";
 import Alert from "./Alert.js";
 import ReactDOM from "react-dom";
+import Menu from "./DropDown";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 // export default class Form extends React.Component { //stateful component
 
 const Form = props => {
+  const toClose = false;
+
+  const toggle = e => {
+    e.stopPropagation();
+    var btn = this;
+    var menu = btn.nextSibling;
+
+    while (menu && menu.nodeType != 1) {
+      menu = menu.nextSibling;
+    }
+    if (!menu) return;
+    if (menu.style.display !== "block") {
+      menu.style.display = "block";
+      if (toClose) toClose.style.display = "none";
+      toClose = menu;
+    } else {
+      menu.style.display = "none";
+      toClose = false;
+    }
+  };
+
+  const closeAll = () => {
+    toClose.style.display = "none";
+  };
+
+  const addEventListener = ("DOMContentLoaded",
+  function() {
+    document.querySelectorAll(".btn-buy-list").forEach(function(btn) {
+      btn.addEventListener("click", toggle, true);
+    });
+  });
+
+  const onclick = function(event) {
+    if (toClose) {
+      closeAll.call(event.target);
+    }
+  };
 
   return (
-    <div id='task-form'>
+    <div id="task-form">
       <form method="POST" action={`/tasks`}>
         <TextField
           required
-          className=''
+          className=""
           margin="normal"
           variant="outlined"
           name="task"
@@ -37,6 +75,48 @@ const Form = props => {
           margin="normal"
           variant="outlined"
         />
+        <select>
+          <option type="text" name="currentTime" value="volvo">Volvo</option>
+          <option type="text" name="currentTime" value="saab">Saab</option>
+          <option type="text" name="currentTime" value="opel">Opel</option>
+          <option type="text" name="currentTime" value="audi">Audi</option>
+        </select>
+        {/* <div className="radio">
+          <label>
+            <input type="radio" value="eastern" checked={false} />
+            Option 1
+          </label>
+        </div>
+        <div className="radio">
+          <label>
+            <input type="radio" value="central" checked={false} />
+            Option 2
+          </label>
+        </div>
+        <div className="radio">
+          <label>
+            <input type="radio" value="mountain" checked={false} />
+            Option 3
+          </label>
+        </div>
+        <div className="radio">
+          <label>
+            <input type="radio" value="pacific" checked={false} />
+            Option 4
+          </label>
+        </div>
+        <div className="radio">
+          <label>
+            <input type="radio" value="hawaii" checked={false} />
+            Option 4
+          </label>
+        </div>
+        <div className="radio">
+          <label>
+            <input type="radio" value="alaska" checked={false} />
+            Option 4
+          </label>
+        </div> */}
         <br />
         <Button
           id="submit-button"

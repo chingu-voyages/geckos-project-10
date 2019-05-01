@@ -25,7 +25,7 @@ const schedulerFactory = require("./schedulerFactory.js");
 const port = process.env.PORT || 3000;
 const moment = require('moment');
 const test = new Date();
-console.log(test);
+// console.log(test);
 // console.log(moment.utc(test).format());
 // const MessagingResponse = require('twilio').twiml.MessagingResponse;
 
@@ -116,8 +116,8 @@ app.get("/", function(req, res) {
 app.post("/tasks", function(req, res) {
   //database endpoint; submits data from user input
   // let tasks;
-  
-  console.log(req.body, "*******");
+  console.log(res.body, "RES.BODY");
+  console.log(req.body, "REQ.BODY");
   // req.body = {
   //   task : 'to dooo',
   //   time: {date},
