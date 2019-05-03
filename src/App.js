@@ -19,9 +19,7 @@ class App extends Component {
 
   render() {
     return (
-      <div style={mainDiv}>
-        
-      
+      <div style={mainDiv}> 
         <Title />
         <Form />
         <Task tasks={this.state.tasks} />
