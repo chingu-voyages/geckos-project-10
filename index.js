@@ -421,15 +421,16 @@ var Form = function Form(props) {
     method: "POST",
     action: "/tasks"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_5___default.a, {
-    required: true,
-    className: "",
+    required: true // style={{margin: 10}}
+    ,
     margin: "normal",
     variant: "outlined",
     name: "task",
     type: "text",
     placeholder: "Type your task"
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_5___default.a, {
-    required: true // label="Required"
+    required: true,
+    id: "form-input-field" // label="Required"
     ,
     margin: "normal",
     variant: "outlined",
@@ -438,6 +439,7 @@ var Form = function Form(props) {
 
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_5___default.a, {
     required: true,
+    id: "form-input-field",
     name: "number",
     type: "text" // onChange={props.number}
     ,
@@ -447,6 +449,7 @@ var Form = function Form(props) {
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_5___default.a, {
     required: true,
     select: true,
+    id: "form-input-field",
     name: "timezone",
     margin: "normal",
     variant: "outlined",
@@ -604,12 +607,12 @@ var Task = function Task(props) {
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
       className: "userTask",
       key: entry._id
-    }, entry.task, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1___default.a, {
+    }, entry.task, " ", " due at ", entry.time.toString().split("G")[0]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1___default.a, {
       type: "submit",
       variant: "contained",
       color: "secondary",
       size: "small"
-    }, "x"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), entry.time.toString().split("G")[0]))));
+    }, "x"))));
   })));
 };
 
@@ -642,7 +645,7 @@ var Task = function Task(props) {
 
 exports = module.exports = __webpack_require__(14)(false);
 // Module
-exports.push([module.i, "body {\r\n  background-color: white;\r\n  font-family: \"Libre Franklin\", sans-serif;\r\n}\r\n\r\n/* TITLE CONTAINER */\r\n\r\n.title-container {\r\n  line-height: 300px;\r\n  margin: 0;\r\n  height: 30rem;\r\n  background-image: url(\"https://images.unsplash.com/photo-1485470733090-0aae1788d5af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1391&q=80\");\r\n  background-repeat: no-repeat;\r\n  background-position: center center;\r\n  background-size: cover;\r\n  position: relative;\r\n}\r\nh1 {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  line-height: normal;\r\n  font-size: 6rem;\r\n  color: white;\r\n  position: absolute;\r\n  bottom: 0;\r\n  left: .5em;\r\n}\r\n\r\n\r\n\r\n\r\n\r\n/* TASK FORM */\r\n\r\n#task-form {\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\n\r\n/* TASK LIST */\r\n\r\n#task-container {\r\n  margin: 0 auto;\r\n  display: flex;\r\n}\r\n\r\nli {\r\n  font-size: 1.5rem;\r\n  padding-top: 20px;\r\n}\r\n\r\n#submit-button {\r\n  color: white;\r\n  background-color: lightseagreen;\r\n  display: inline-block;\r\n}\r\n\r\n.userTask {\r\n  text-align: left;\r\n}\r\n\r\n", ""]);
+exports.push([module.i, "\r\n/* Basic styles */\r\n*,\r\n*::before,\r\n*::after {\r\n  box-sizing: border-box;\r\n}\r\n\r\n:root{\r\n  --bg-color: #D8D8D8;\r\n}\r\n\r\nbody {\r\n  /* display: flex; */\r\n  /* align-items: center; */\r\n  /* justify-content: center; */\r\n  /* overflow: hidden; */\r\n  width: 100vw;\r\n  height: 100vh;\r\n  color: #000;\r\n  background-color: white;\r\n  /* font-family: 'Maitree', serif; */\r\n  font-family: \"Libre Franklin\", sans-serif;\r\n\r\n}\r\n\r\n\r\n/* TITLE CONTAINER */\r\n\r\n.title-container {\r\n  /* line-height: 300px; */\r\n  margin: 0;\r\n  padding-left: 2rem;\r\n  height: 30rem;\r\n  background-color: #adc3b7;\r\n  /* background-image: url(\"https://images.unsplash.com/photo-1485470733090-0aae1788d5af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1391&q=80\"); */\r\n  /* background-repeat: no-repeat; */\r\n  /* background-position: center center; */\r\n  /* background-size: cover; */\r\n  position: relative;\r\n  display: flex;\r\n}\r\n\r\n.title-container h1 {\r\n  overflow: hidden;\r\n  font-size: 8rem;\r\n  color: white;\r\n  position: absolute;\r\n  /* bottom: 0; */\r\n  display: block;\r\n  align-self: flex-end;\r\n  text-align: left;\r\n  margin: -0.4em 0px 0px 0;\r\n  letter-spacing: -7px;\r\n  word-spacing: 1px;\r\n  opacity: 0.7;\r\n  font-weight: bolder;\r\n  text-transform: uppercase;\r\n}\r\n.title-container p{\r\n  bottom: 0;\r\n  display: block;\r\n  align-self: flex-end;\r\n  margin: 0px;\r\n  margin: 0em 0px 2em 0px;\r\n  font-weight: bolder;\r\n  font-size: 1.05rem;\r\n}\r\n\r\n/* h1 header animation */\r\n.title-container h1::before{\r\n  content: '';\r\n  position: absolute;\r\n  top: 0;\r\n  right: 0;\r\n  width: 100%;\r\n  height: 85%;\r\n  background:#adc3b7;\r\n  animation: a-ltr-before 2s cubic-bezier(.77,0,.18,1) forwards;\r\n  transform: translateX(0);\r\n}\r\n.title-container h1::after{\r\n  content: '';\r\n  position: absolute;\r\n  top: 0;\r\n  right: 0;\r\n  width: 100%;\r\n  height: 85%;\r\n  background: white;\r\n  animation: a-ltr-after 2s cubic-bezier(.77,0,.18,1) forwards;\r\n  transform: translateX(-101%);\r\n}\r\n\r\n h1:nth-of-type(1)::before,\r\n h1:nth-of-type(1)::after{\r\n  animation-delay: .5s;\r\n}\r\n\r\n h1:nth-of-type(2)::before,\r\n h1:nth-of-type(2)::after{\r\n  animation-delay: 1.8s;\r\n}\r\n\r\n/* sub header p animation */\r\n.title-container p::before{\r\n  content: '';\r\n  position: absolute;\r\n  top: 0;\r\n  right: 0;\r\n  width: 100%;\r\n  height: 85%;\r\n  background:#adc3b7;\r\n  animation: a-ltr-before 2s cubic-bezier(.77,0,.18,1) forwards;\r\n  transform: translateX(0);\r\n}\r\n.title-container p::after{\r\n  content: '';\r\n  position: absolute;\r\n  top: 0;\r\n  right: 0;\r\n  width: 100%;\r\n  height: 85%;\r\n  background: white;\r\n  animation: a-ltr-after 2s cubic-bezier(.77,0,.18,1) forwards;\r\n  transform: translateX(-101%);\r\n}\r\n.title-container p:nth-of-type(1)::before,\r\n.title-container p:nth-of-type(1)::after{\r\n  animation-delay: .5s;\r\n}\r\n.title-container p:nth-of-type(2)::before,\r\n.title-container p:nth-of-type(2)::after{\r\n  animation-delay: 1.8s;\r\n}\r\n\r\n@keyframes a-ltr-after{\r\n  0% {transform: translateX(-100%)}\r\n  100% {transform: translateX(101%)}\r\n}\r\n\r\n@keyframes a-ltr-before{\r\n  0% {transform: translateX(0)}\r\n  100% {transform: translateX(200%)}\r\n}\r\n\r\n\r\n\r\n/* TASK FORM */\r\n\r\n#task-form {\r\n  display: flex;\r\n  justify-content: center;\r\n  margin: 2.5rem;\r\n}\r\n#form-input-field{\r\n  /* margin-right: 15px; */\r\n}\r\n\r\n\r\n/* TASK LIST */\r\n\r\n#task-container {\r\n  margin: 0 auto;\r\n  display: flex;\r\n}\r\n\r\nli {\r\n  font-size: 1.5rem;\r\n  padding-top: 20px;\r\n}\r\n\r\n#submit-button {\r\n  color: white;\r\n  background-color: #adc3b7;\r\n  display: inline-block;\r\n}\r\n#submit-button:hover{\r\nbackground-color: #8da799;\r\ntransition-delay: .2s;\r\n}\r\n\r\n.userTask {\r\n  title-align: left;\r\n}\r\n\r\n\r\n\r\n\r\n\r\n", ""]);
 
 
 
@@ -853,7 +856,7 @@ __webpack_require__.r(__webpack_exports__);
 var Title = function Title(props) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "title-container"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "My To Do List"));
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "My To Do List"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "a simple to do app that SMS reminders directly to your phone so you'll never forget to finish a task, even when you're on the run."));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Title);

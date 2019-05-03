@@ -19,20 +19,19 @@ const Task = props => {
                   method="POST"
                   action={`/tasks/${entry._id}?_method=DELETE`}
                 >
-                  <span className='userTask' key={entry._id}>
+                  <span className="userTask" key={entry._id}>
                     {entry.task}
-                    <Button
-                    type="submit"
-                    variant="contained"
-                    color="secondary"
-                    size="small"
-                  >
-                    x
-                  </Button>
-                    <br />
-                     {entry.time.toString().split("G")[0]}
+                   
+                    {" "} due at {entry.time.toString().split("G")[0]}
                   </span>
-                
+                  <Button
+                      type="submit"
+                      variant="contained"
+                      color="secondary"
+                      size="small"
+                    >
+                      x
+                    </Button>
                 </form>
               </li>
             </div>

@@ -51,7 +51,7 @@ const Form = props => {
       <form method="POST" action={`/tasks`}>
         <TextField
           required
-          className=""
+          // style={{margin: 10}}
           margin="normal"
           variant="outlined"
           name="task"
@@ -59,7 +59,8 @@ const Form = props => {
           placeholder="Type your task"
         />
         <TextField
-          required
+          required  
+          id="form-input-field"        
           // label="Required"
           margin="normal"
           variant="outlined"
@@ -68,7 +69,8 @@ const Form = props => {
           // onChange={props.time}
         />
         <TextField
-          required
+          required  
+          id="form-input-field"        
           name="number"
           type="text"
           // onChange={props.number}
@@ -77,8 +79,9 @@ const Form = props => {
           variant="outlined"
         />
         <TextField
-          required
+          required          
           select
+          id="form-input-field"
           name="timezone"
           margin="normal"
           variant="outlined"
@@ -91,42 +94,6 @@ const Form = props => {
           <option value="CDT">Central Time</option>
           <option value="EDT">Eastern Time</option>
         </TextField>
-        {/* <div className="radio">
-          <label>
-            <input type="radio" value="eastern" checked={false} />
-            Option 1
-          </label>
-        </div>
-        <div className="radio">
-          <label>
-            <input type="radio" value="central" checked={false} />
-            Option 2
-          </label>
-        </div>
-        <div className="radio">
-          <label>
-            <input type="radio" value="mountain" checked={false} />
-            Option 3
-          </label>
-        </div>
-        <div className="radio">
-          <label>
-            <input type="radio" value="pacific" checked={false} />
-            Option 4
-          </label>
-        </div>
-        <div className="radio">
-          <label>
-            <input type="radio" value="hawaii" checked={false} />
-            Option 4
-          </label>
-        </div>
-        <div className="radio">
-          <label>
-            <input type="radio" value="alaska" checked={false} />
-            Option 4
-          </label>
-        </div> */}
         <br />
         <Button
           id="submit-button"
