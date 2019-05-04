@@ -22,7 +22,7 @@ const Task = props => {
                   <span className="userTask" key={entry._id}>
                     {entry.task}
                    
-                    {" "} due at {entry.time.toString().split("G")[0]}
+                    {" "} due on {entry.time.toString().split("G")[0]}
                   </span>
                   <Button
                       type="submit"
