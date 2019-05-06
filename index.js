@@ -278,10 +278,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Form_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
-/* harmony import */ var _Task_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(11);
-/* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(12);
+/* harmony import */ var _Task_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(10);
+/* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(11);
 /* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_App_css__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _Title_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(16);
+/* harmony import */ var _Title_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(15);
 /* harmony import */ var isomorphic_style_loader_withStyles__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(17);
 /* harmony import */ var isomorphic_style_loader_withStyles__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(isomorphic_style_loader_withStyles__WEBPACK_IMPORTED_MODULE_5__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -357,11 +357,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _DropDown__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(6);
-/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8);
+/* harmony import */ var _DropDown__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_DropDown__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7);
 /* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(9);
+/* harmony import */ var _material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(8);
 /* harmony import */ var _material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(10);
+/* harmony import */ var _material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(9);
 /* harmony import */ var _material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_6__);
 var _this = undefined;
 
@@ -516,21 +517,14 @@ module.exports = require("react-dom");
 
 /***/ }),
 /* 6 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-
-
-
-var Dropdown = __webpack_require__(7);
-
-var DropdownTrigger = Dropdown.DropdownTrigger;
-var DropdownContent = Dropdown.DropdownContent; // const Menu = () => {
+// import ReactDOM from "react-dom";
+// import React, { Component } from "react";
+// const Dropdown = require("react-simple-dropdown");
+// const DropdownTrigger = Dropdown.DropdownTrigger;
+// const DropdownContent = Dropdown.DropdownContent;
+// const Menu = () => {
 //   return (
 //     <div>
 //       <Dropdown>
@@ -560,35 +554,29 @@ var DropdownContent = Dropdown.DropdownContent; // const Menu = () => {
 /* 7 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-simple-dropdown");
+module.exports = require("@material-ui/core/Button");
 
 /***/ }),
 /* 8 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/core/Button");
+module.exports = require("@material-ui/core/TextField");
 
 /***/ }),
 /* 9 */
 /***/ (function(module, exports) {
 
-module.exports = require("@material-ui/core/TextField");
-
-/***/ }),
-/* 10 */
-/***/ (function(module, exports) {
-
 module.exports = require("@material-ui/core/MenuItem");
 
 /***/ }),
-/* 11 */
+/* 10 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8);
+/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7);
 /* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1__);
 
 
@@ -607,11 +595,16 @@ var Task = function Task(props) {
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
       className: "userTask",
       key: entry._id
-    }, entry.task, " ", " due on ", entry.time.toString().split("G")[0]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1___default.a, {
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "entry-task"
+    }, entry.task), " due on", " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "entry-time"
+    }, entry.time.toString().split("G")[0])), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
       type: "submit",
       variant: "contained",
       color: "secondary",
-      size: "small"
+      size: "small",
+      className: "delete-button"
     }, "x"))));
   })));
 };
@@ -619,13 +612,13 @@ var Task = function Task(props) {
 /* harmony default export */ __webpack_exports__["default"] = (Task);
 
 /***/ }),
-/* 12 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
     var refs = 0;
-    var css = __webpack_require__(13);
-    var insertCss = __webpack_require__(15);
+    var css = __webpack_require__(12);
+    var insertCss = __webpack_require__(14);
     var content = typeof css === 'string' ? [[module.i, css, '']] : css;
 
     exports = module.exports = css.locals || {};
@@ -640,29 +633,208 @@ var Task = function Task(props) {
   
 
 /***/ }),
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(13)(false);
+// Module
+exports.push([module.i, "\r\n/* Basic styles */\r\n*,\r\n*::before,\r\n*::after {\r\n  box-sizing: border-box;\r\n}\r\n\r\n:root{\r\n  --bg-color: #D8D8D8;\r\n}\r\n\r\nbody {\r\n  /* display: flex; */\r\n  /* align-items: center; */\r\n  /* justify-content: center; */\r\n  /* overflow: hidden; */\r\n  width: 100vw;\r\n  height: 100vh;\r\n  color: #000;\r\n  background-color: white;\r\n  overflow-x: hidden;\r\n  /* font-family: 'Maitree', serif; */\r\n  font-family: \"Libre Franklin\", sans-serif;\r\n  margin: 0 !important;\r\n}\r\n\r\n\r\n/* TITLE CONTAINER */\r\n\r\n.title-container {\r\n  /* line-height: 300px; */\r\n  margin: 0;\r\n  top: 0;\r\n  left: 0;\r\n  padding-left: 2rem;\r\n  height: 30rem;\r\n  background-color: #adc3b7;\r\n  /* background-image: url(\"https://images.unsplash.com/photo-1485470733090-0aae1788d5af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1391&q=80\"); */\r\n  /* background-repeat: no-repeat; */\r\n  /* background-position: center center; */\r\n  /* background-size: cover; */\r\n  position: relative;\r\n  display: flex;\r\n}\r\n\r\n.title-container h1 {\r\n  overflow: hidden;\r\n  font-size: 128px;\r\n  color: white;\r\n  position: absolute;\r\n  bottom: 0;\r\n  display: block;\r\n  align-self: flex-end;\r\n  text-align: left;\r\n  margin: 0px 0px 59px -2px;\r\n  letter-spacing: -7px;\r\n  word-spacing: 1px;\r\n  opacity: 0.7;\r\n  font-weight: bolder;\r\n  text-transform: uppercase;\r\n}\r\n.title-container p{\r\n  bottom: 0;\r\n  display: inline-block;\r\n  align-self: flex-end;\r\n  /* margin: 0px; */\r\n  margin: 0 53px 41px 0px;\r\n  font-size: 1.1rem;\r\n  height: 20px;\r\n  letter-spacing: 1.3px;\r\n}\r\n\r\n\r\n/* TASK FORM */\r\n\r\n#task-form {\r\n  display: flex;\r\n  justify-content: center;\r\n  margin: 2.5rem;\r\n}\r\n#form-input-field{\r\n  /* margin-right: 15px; */\r\n}\r\n.userTask{\r\n  font-family: 'Libre Franklin', sans-serif;\r\n}\r\n.delete-button{\r\n  background-color:transparent;\r\n  border: transparent solid 1px; \r\n  color: #adc3b7;\r\n  font-size: 1.07rem;\r\n  font-weight: bolder\r\n}\r\n.delete-button:hover{\r\ncolor: #687c72;\r\n}\r\n\r\n/* TASK LIST */\r\n\r\n#task-container {\r\n  margin: 0 auto;\r\n  display: flex;\r\n}\r\n\r\nli {\r\n  font-size: 1.5rem;\r\n  padding-top: 20px;\r\n}\r\n\r\n#submit-button {\r\n  color: white;\r\n  background-color: #adc3b7;\r\n  display: inline-block;\r\n}\r\n#submit-button:hover{\r\nbackground-color: #8da799;\r\ntransition-delay: .2s;\r\n}\r\n\r\n.userTask {\r\nfont-size: 1.3rem;\r\n}\r\n.entry-task {\r\n  display: inline;\r\n  font-weight: bold;\r\n}\r\n.entry-time{\r\n  display: inline;\r\n  font-weight: bold;\r\n}\r\n\r\n\r\n\r\n", ""]);
+
+
+
+/***/ }),
 /* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(14)(false);
-// Module
-exports.push([module.i, "\r\n/* Basic styles */\r\n*,\r\n*::before,\r\n*::after {\r\n  box-sizing: border-box;\r\n}\r\n\r\n:root{\r\n  --bg-color: #D8D8D8;\r\n}\r\n\r\nbody {\r\n  /* display: flex; */\r\n  /* align-items: center; */\r\n  /* justify-content: center; */\r\n  /* overflow: hidden; */\r\n  width: 100vw;\r\n  height: 100vh;\r\n  color: #000;\r\n  background-color: white;\r\n  overflow-x: hidden;\r\n  /* font-family: 'Maitree', serif; */\r\n  font-family: \"Libre Franklin\", sans-serif;\r\n  margin: 0 !important;\r\n}\r\n\r\n\r\n/* TITLE CONTAINER */\r\n\r\n.title-container {\r\n  /* line-height: 300px; */\r\n  margin: 0;\r\n  top: 0;\r\n  left: 0;\r\n  padding-left: 2rem;\r\n  height: 30rem;\r\n  background-color: #adc3b7;\r\n  /* background-image: url(\"https://images.unsplash.com/photo-1485470733090-0aae1788d5af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1391&q=80\"); */\r\n  /* background-repeat: no-repeat; */\r\n  /* background-position: center center; */\r\n  /* background-size: cover; */\r\n  position: relative;\r\n  display: flex;\r\n}\r\n\r\n.title-container h1 {\r\n  overflow: hidden;\r\n  font-size: 128px;\r\n  color: white;\r\n  position: absolute;\r\n  /* bottom: 0; */\r\n  display: block;\r\n  align-self: flex-end;\r\n  text-align: left;\r\n  margin: -0.4em 0px 0px 0;\r\n  letter-spacing: -7px;\r\n  word-spacing: 1px;\r\n  opacity: 0.7;\r\n  font-weight: bolder;\r\n  text-transform: uppercase;\r\n}\r\n.title-container p{\r\n  bottom: 0;\r\n  display: inline-block;\r\n  align-self: flex-end;\r\n  /* margin: 0px; */\r\n  margin: 0px 53px 15px 0px;\r\n  font-weight: bolder;\r\n  font-size: 1.05rem;\r\n  height: 20px;\r\n}\r\n\r\n/* h1 header animation */\r\n.title-container h1::before{\r\n  content: '';\r\n  position: absolute;\r\n  top: 0;\r\n  right: 0;\r\n  width: 100%;\r\n  height: 128px;\r\n  background:#adc3b7;\r\n  animation: a-ltr-before 2s cubic-bezier(.1,0,.3,1) forwards;\r\n  transform: translateX(0);\r\n}\r\n.title-container h1::after{\r\n  content: '';\r\n  position: absolute;\r\n  top: 0;\r\n  right: 0;\r\n  width: 100%;\r\n  height: 128px;\r\n  background: #adc3b7;\r\n  animation: a-ltr-after 2s cubic-bezier(.1,0,.3,1) forwards;\r\n  transform: translateX(-101%);\r\n}\r\n\r\n h1:nth-of-type(1)::before,\r\n h1:nth-of-type(1)::after{\r\n  animation-delay: .5s;\r\n}\r\n\r\n h1:nth-of-type(2)::before,\r\n h1:nth-of-type(2)::after{\r\n  animation-delay: 1.8s;\r\n}\r\n\r\n/* sub header p animation */\r\n.title-container p::before{\r\n  content: '';\r\n  position: absolute;\r\n  /* top: 0; */\r\n  bottom: 15px;\r\n  right: 0;\r\n  width: 100%;\r\n  height: 20px;\r\n  background:#adc3b7;\r\n  animation: a-ltr-before 5s cubic-bezier(.1,0,.5,.9) forwards;\r\n  transform: translateX(0);\r\n}\r\n.title-container p::after{\r\n  content: '';\r\n  position: absolute;\r\n  /* top: 0; */\r\n  bottom: 15px;\r\n  right: 0;\r\n  width: 100%;\r\n  height: 20px;\r\n  background: #adc3b7;\r\n  animation: a-ltr-after 5s cubic-bezier(.1,0,.5,.9) forwards;\r\n  transform: translateX(-100%);\r\n}\r\n.title-container p:nth-of-type(1)::before,\r\n.title-container p:nth-of-type(1)::after{\r\n  animation-delay: 1.7s;\r\n}\r\n.title-container p:nth-of-type(2)::before,\r\n.title-container p:nth-of-type(2)::after{\r\n  animation-delay: 1s;\r\n}\r\n\r\n@keyframes a-ltr-after{\r\n  0% {transform: translateX(-100%)}\r\n  100% {transform: translateX(101%)}\r\n}\r\n\r\n@keyframes a-ltr-before{\r\n  0% {transform: translateX(0)}\r\n  100% {transform: translateX(200%)}\r\n}\r\n\r\n\r\n\r\n/* TASK FORM */\r\n\r\n#task-form {\r\n  display: flex;\r\n  justify-content: center;\r\n  margin: 2.5rem;\r\n}\r\n#form-input-field{\r\n  /* margin-right: 15px; */\r\n}\r\n\r\n\r\n/* TASK LIST */\r\n\r\n#task-container {\r\n  margin: 0 auto;\r\n  display: flex;\r\n}\r\n\r\nli {\r\n  font-size: 1.5rem;\r\n  padding-top: 20px;\r\n}\r\n\r\n#submit-button {\r\n  color: white;\r\n  background-color: #adc3b7;\r\n  display: inline-block;\r\n}\r\n#submit-button:hover{\r\nbackground-color: #8da799;\r\ntransition-delay: .2s;\r\n}\r\n\r\n.userTask {\r\n  title-align: left;\r\n}\r\n\r\n\r\n\r\n\r\n\r\n", ""]);
+"use strict";
 
 
+/*
+  MIT License http://www.opensource.org/licenses/mit-license.php
+  Author Tobias Koppers @sokra
+*/
+// css base code, injected by the css-loader
+module.exports = function (useSourceMap) {
+  var list = []; // return the list of modules as css string
+
+  list.toString = function toString() {
+    return this.map(function (item) {
+      var content = cssWithMappingToString(item, useSourceMap);
+
+      if (item[2]) {
+        return '@media ' + item[2] + '{' + content + '}';
+      } else {
+        return content;
+      }
+    }).join('');
+  }; // import a list of modules into the list
+
+
+  list.i = function (modules, mediaQuery) {
+    if (typeof modules === 'string') {
+      modules = [[null, modules, '']];
+    }
+
+    var alreadyImportedModules = {};
+
+    for (var i = 0; i < this.length; i++) {
+      var id = this[i][0];
+
+      if (id != null) {
+        alreadyImportedModules[id] = true;
+      }
+    }
+
+    for (i = 0; i < modules.length; i++) {
+      var item = modules[i]; // skip already imported module
+      // this implementation is not 100% perfect for weird media query combinations
+      // when a module is imported multiple times with different media queries.
+      // I hope this will never occur (Hey this way we have smaller bundles)
+
+      if (item[0] == null || !alreadyImportedModules[item[0]]) {
+        if (mediaQuery && !item[2]) {
+          item[2] = mediaQuery;
+        } else if (mediaQuery) {
+          item[2] = '(' + item[2] + ') and (' + mediaQuery + ')';
+        }
+
+        list.push(item);
+      }
+    }
+  };
+
+  return list;
+};
+
+function cssWithMappingToString(item, useSourceMap) {
+  var content = item[1] || '';
+  var cssMapping = item[3];
+
+  if (!cssMapping) {
+    return content;
+  }
+
+  if (useSourceMap && typeof btoa === 'function') {
+    var sourceMapping = toComment(cssMapping);
+    var sourceURLs = cssMapping.sources.map(function (source) {
+      return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */';
+    });
+    return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
+  }
+
+  return [content].join('\n');
+} // Adapted from convert-source-map (MIT)
+
+
+function toComment(sourceMap) {
+  // eslint-disable-next-line no-undef
+  var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
+  var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
+  return '/*# ' + data + ' */';
+}
 
 /***/ }),
 /* 14 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-throw new Error("Module build failed: Error: ENOENT: no such file or directory, open '/home/stephanie/Documents/Programming_Materials/Chingu/to-do-app/node_modules/css-loader/dist/runtime/api.js'");
+"use strict";
+/*! Isomorphic Style Loader | MIT License | https://github.com/kriasoft/isomorphic-style-loader */
+
+
+
+var inserted = {};
+
+function b64EncodeUnicode(str) {
+  return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, function (match, p1) {
+    return String.fromCharCode("0x" + p1);
+  }));
+}
+
+function removeCss(ids) {
+  ids.forEach(function (id) {
+    if (--inserted[id] <= 0) {
+      var elem = document.getElementById(id);
+
+      if (elem) {
+        elem.parentNode.removeChild(elem);
+      }
+    }
+  });
+}
+
+function insertCss(styles, _temp) {
+  var _ref = _temp === void 0 ? {} : _temp,
+      _ref$replace = _ref.replace,
+      replace = _ref$replace === void 0 ? false : _ref$replace,
+      _ref$prepend = _ref.prepend,
+      prepend = _ref$prepend === void 0 ? false : _ref$prepend,
+      _ref$prefix = _ref.prefix,
+      prefix = _ref$prefix === void 0 ? 's' : _ref$prefix;
+
+  var ids = [];
+
+  for (var i = 0; i < styles.length; i++) {
+    var _styles$i = styles[i],
+        moduleId = _styles$i[0],
+        css = _styles$i[1],
+        media = _styles$i[2],
+        sourceMap = _styles$i[3];
+    var id = "" + prefix + moduleId + "-" + i;
+    ids.push(id);
+
+    if (inserted[id]) {
+      if (!replace) {
+        inserted[id]++;
+        continue;
+      }
+    }
+
+    inserted[id] = 1;
+    var elem = document.getElementById(id);
+    var create = false;
+
+    if (!elem) {
+      create = true;
+      elem = document.createElement('style');
+      elem.setAttribute('type', 'text/css');
+      elem.id = id;
+
+      if (media) {
+        elem.setAttribute('media', media);
+      }
+    }
+
+    var cssText = css;
+
+    if (sourceMap && typeof btoa === 'function') {
+      cssText += "\n/*# sourceMappingURL=data:application/json;base64," + b64EncodeUnicode(JSON.stringify(sourceMap)) + "*/";
+      cssText += "\n/*# sourceURL=" + sourceMap.file + "?" + id + "*/";
+    }
+
+    if ('textContent' in elem) {
+      elem.textContent = cssText;
+    } else {
+      elem.styleSheet.cssText = cssText;
+    }
+
+    if (create) {
+      if (prepend) {
+        document.head.insertBefore(elem, document.head.childNodes[0]);
+      } else {
+        document.head.appendChild(elem);
+      }
+    }
+  }
+
+  return removeCss.bind(null, ids);
+}
+
+module.exports = insertCss;
+//# sourceMappingURL=insertCss.js.map
+
 
 /***/ }),
 /* 15 */
-/***/ (function(module, exports) {
-
-throw new Error("Module build failed: Error: ENOENT: no such file or directory, open '/home/stephanie/Documents/Programming_Materials/Chingu/to-do-app/node_modules/isomorphic-style-loader/insertCss.js'");
-
-/***/ }),
-/* 16 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -677,12 +849,13 @@ __webpack_require__.r(__webpack_exports__);
 var Title = function Title(props) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "title-container"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "My To Do List"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "a simple to do app that SMS reminders directly to your phone so you'll never forget to finish a task, even when you're on the run."));
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "My To Do List"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "a simple to do app that sends SMS reminders to your phone so you'll never forget to finish a task, even when you're on the run."));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Title);
 
 /***/ }),
+/* 16 */,
 /* 17 */
 /***/ (function(module, exports) {
 

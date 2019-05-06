@@ -1,9 +1,9 @@
-import ReactDOM from "react-dom";
-import React, { Component } from "react";
+// import ReactDOM from "react-dom";
+// import React, { Component } from "react";
 
-const Dropdown = require("react-simple-dropdown");
-const DropdownTrigger = Dropdown.DropdownTrigger;
-const DropdownContent = Dropdown.DropdownContent;
+// const Dropdown = require("react-simple-dropdown");
+// const DropdownTrigger = Dropdown.DropdownTrigger;
+// const DropdownContent = Dropdown.DropdownContent;
 
 // const Menu = () => {
 //   return (
