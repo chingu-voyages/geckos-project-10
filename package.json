@@ -49,6 +49,5 @@
   },
   "scripts": {
     "start": "node index.js",
-    "build": "webpack --config webpack.server.js --w"
       }
 }
