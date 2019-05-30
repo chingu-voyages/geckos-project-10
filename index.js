@@ -334,7 +334,9 @@ function (_Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         style: mainDiv
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Title_js__WEBPACK_IMPORTED_MODULE_4__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Form_js__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Task_js__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: "title-form"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Title_js__WEBPACK_IMPORTED_MODULE_4__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Form_js__WEBPACK_IMPORTED_MODULE_1__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Task_js__WEBPACK_IMPORTED_MODULE_2__["default"], {
         tasks: this.state.tasks
       }));
     }
@@ -582,10 +584,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Task = function Task(props) {
-  // {
-  //   var key = 0;
-  // }
-  // console.log('THIS IS PROPS', props.tasks)
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ol", null, props.tasks.map(function (entry) {
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       id: "task-container"
@@ -605,7 +603,7 @@ var Task = function Task(props) {
       color: "secondary",
       size: "small",
       className: "delete-button"
-    }, "x"))));
+    }, "x"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null))));
   })));
 };
 
@@ -638,7 +636,7 @@ var Task = function Task(props) {
 
 exports = module.exports = __webpack_require__(13)(false);
 // Module
-exports.push([module.i, "\r\n/* Basic styles */\r\n*,\r\n*::before,\r\n*::after {\r\n  box-sizing: border-box;\r\n}\r\n\r\n:root{\r\n  --bg-color: #D8D8D8;\r\n}\r\n\r\nbody {\r\n  /* display: flex; */\r\n  /* align-items: center; */\r\n  /* justify-content: center; */\r\n  /* overflow: hidden; */\r\n  width: 100vw;\r\n  height: 100vh;\r\n  color: #000;\r\n  background-color: white;\r\n  overflow-x: hidden;\r\n  /* font-family: 'Maitree', serif; */\r\n  font-family: \"Libre Franklin\", sans-serif;\r\n  margin: 0 !important;\r\n}\r\n\r\n\r\n/* TITLE CONTAINER */\r\n\r\n.title-container {\r\n  /* line-height: 300px; */\r\n  margin: 0;\r\n  top: 0;\r\n  left: 0;\r\n  padding-left: 2rem;\r\n  height: 30rem;\r\n  background-color: #adc3b7;\r\n  /* background-image: url(\"https://images.unsplash.com/photo-1485470733090-0aae1788d5af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1391&q=80\"); */\r\n  /* background-repeat: no-repeat; */\r\n  /* background-position: center center; */\r\n  /* background-size: cover; */\r\n  position: relative;\r\n  display: flex;\r\n}\r\n\r\n.title-container h1 {\r\n  overflow: hidden;\r\n  font-size: 128px;\r\n  color: white;\r\n  position: absolute;\r\n  bottom: 0;\r\n  display: block;\r\n  align-self: flex-end;\r\n  text-align: left;\r\n  margin: 0px 0px 59px -2px;\r\n  letter-spacing: -7px;\r\n  word-spacing: 1px;\r\n  opacity: 0.7;\r\n  font-weight: bolder;\r\n  text-transform: uppercase;\r\n}\r\n.title-container p{\r\n  bottom: 0;\r\n  display: inline-block;\r\n  align-self: flex-end;\r\n  /* margin: 0px; */\r\n  margin: 0 53px 41px 0px;\r\n  font-size: 1.1rem;\r\n  height: 20px;\r\n  letter-spacing: 1.3px;\r\n}\r\n\r\n\r\n/* TASK FORM */\r\n\r\n#task-form {\r\n  display: flex;\r\n  justify-content: center;\r\n  margin: 2.5rem;\r\n}\r\n#form-input-field{\r\n  /* margin-right: 15px; */\r\n}\r\n.userTask{\r\n  font-family: 'Libre Franklin', sans-serif;\r\n}\r\n.delete-button{\r\n  background-color:transparent;\r\n  border: transparent solid 1px; \r\n  color: #adc3b7;\r\n  font-size: 1.07rem;\r\n  font-weight: bolder\r\n}\r\n.delete-button:hover{\r\ncolor: #687c72;\r\n}\r\n\r\n/* TASK LIST */\r\n\r\n#task-container {\r\n  margin: 0 auto;\r\n  display: flex;\r\n}\r\n\r\nli {\r\n  font-size: 1.5rem;\r\n  padding-top: 20px;\r\n}\r\n\r\n#submit-button {\r\n  color: white;\r\n  background-color: #adc3b7;\r\n  display: inline-block;\r\n}\r\n#submit-button:hover{\r\nbackground-color: #8da799;\r\ntransition-delay: .2s;\r\n}\r\n\r\n.userTask {\r\nfont-size: 1.3rem;\r\n}\r\n.entry-task {\r\n  display: inline;\r\n  font-weight: bold;\r\n}\r\n.entry-time{\r\n  display: inline;\r\n  font-weight: bold;\r\n}\r\n\r\n\r\n\r\n", ""]);
+exports.push([module.i, "/* Basic styles */\r\n*,\r\n*::before,\r\n*::after {\r\n  box-sizing: border-box;\r\n}\r\n\r\n:root {\r\n  --bg-color: #d8d8d8;\r\n}\r\n\r\nbody {\r\n  /* display: flex; */\r\n  /* align-items: center; */\r\n  /* justify-content: center; */\r\n  /* overflow: hidden; */\r\n  width: 100vw;\r\n  height: 100vh;\r\n  color: #000;\r\n  background-color: white;\r\n  overflow-x: hidden;\r\n  /* font-family: 'Maitree', serif; */\r\n  font-family: \"Libre Franklin\", sans-serif;\r\n  margin: 0 !important;\r\n}\r\n\r\n/* TITLE CONTAINER */\r\n\r\n#title-form {\r\n  background: linear-gradient(rgba(255, 255, 255, 0.84), rgba(255, 255, 255, 0.74)), url(\"https://images.unsplash.com/photo-1540921304892-aae50a14c9a5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80\");\r\n  background-repeat: no-repeat;\r\n  background-position: bottom;\r\n  background-size: cover;\r\n  position: relative;\r\n  padding-bottom: 1rem;\r\n  overflow: hidden;\r\n}\r\n\r\n.title-container {\r\n  /* line-height: 300px; */\r\n  margin: 0;\r\n  top: 0;\r\n  left: 0;\r\n  padding-left: 2rem;\r\n  /* height: 30rem; */\r\n}\r\n\r\n.title-container h1 {\r\n  overflow: hidden;\r\n  font-size: 128px;\r\n  color: black;\r\n  /* position: absolute; */\r\n  bottom: 0;\r\n  display: block;\r\n  align-self: flex-end;\r\n  /* text-align: left; */\r\n  margin: 0px 0px 11px -2px;\r\n  letter-spacing: -7px;\r\n  word-spacing: 1px;\r\n  font-weight: bolder;\r\n  text-transform: uppercase;\r\n  padding-top: 10rem;\r\n}\r\n.title-container p {\r\n  bottom: 0;\r\n  display: inline-block;\r\n  align-self: flex-end;\r\n  margin: 0 53px 25px 0px;\r\n  font-size: 1.1rem;\r\n  height: 20px;\r\n  letter-spacing: 0.5px;\r\n}\r\n\r\n/* TASK FORM */\r\n\r\n#task-form {\r\n  display: flex;\r\n  justify-content: center;\r\n  margin-bottom: 2rem;\r\n}\r\n\r\n.MuiInputBase-root-18 {\r\n  margin: 0 1rem;\r\n}\r\n.userTask {\r\n  font-family: \"Libre Franklin\", sans-serif;\r\n}\r\n.delete-button {\r\n  background-color: transparent;\r\n  border: transparent solid 1px;\r\n  color: #adc3b7;\r\n  font-size: 1.07rem;\r\n  font-weight: bolder;\r\n}\r\n.delete-button:hover {\r\n  color: #687c72;\r\n}\r\n\r\n/* TASK LIST */\r\n\r\n#task-container {\r\n  margin: 2rem auto;\r\n  display: flex;\r\n  flex-direction: column;\r\n}\r\n\r\nli {\r\n  font-size: 1.5rem;\r\n  padding-top: 20px;\r\n  list-style-type: none;\r\n}\r\n\r\n#submit-button {\r\n  color: white;\r\n  background-color: #adc3b7;\r\n  display: inline-block;\r\n}\r\n#submit-button:hover {\r\n  background-color: #8da799;\r\n  transition-delay: 0.2s;\r\n}\r\n\r\n.userTask {\r\n  font-size: 1.3rem;\r\n  box-shadow: rgba(32, 33, 36, 0.17) 3px 4px 11px;\r\n  border-radius: 8px;\r\n  padding: 19px;\r\n}\r\n.entry-task {\r\n  display: inline;\r\n}\r\n.entry-time {\r\n  display: inline;\r\n  font-weight: bold;\r\n}\r\n", ""]);
 
 
 
@@ -959,11 +957,12 @@ var Twilio = __webpack_require__(34); // const accountSid = 'AC019a30196451142d2
 var accountSid = process.env.TWILIO_SID || 'AC019a30196451142d27d879a8f687f3cc',
     authToken = process.env.TWILIO_AUTHTOKEN || '978f64b17f1149a06b5f1a84c6fe1bf4',
     mongoPW = process.env.MONGO_PW;
-mongoose.Promise = global.Promise; // mongoose.connect("mongodb://localhost:27017/to-do-app-original",  {useNewUrlParser: true}); //creating the database
-
-mongoose.connect("mongodb+srv://sjl:".concat(mongoPW, "@ssr-todo-app-jvm4p.mongodb.net/ssr-todo-app"), {
+mongoose.Promise = global.Promise;
+mongoose.connect("mongodb://localhost:27017/to-do-app-original", {
   useNewUrlParser: true
-});
+}); //creating the database
+// mongoose.connect(`mongodb+srv://sjl:${mongoPW}@ssr-todo-app-jvm4p.mongodb.net/ssr-todo-app`, {useNewUrlParser: true});
+
 var nameSchema = mongoose.Schema({
   task: String,
   number: String,

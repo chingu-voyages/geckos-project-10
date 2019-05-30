@@ -8,8 +8,8 @@ const accountSid = process.env.TWILIO_SID || 'AC019a30196451142d27d879a8f687f3cc
       mongoPW = process.env.MONGO_PW;
 
 mongoose.Promise = global.Promise;
-// mongoose.connect("mongodb://localhost:27017/to-do-app-original",  {useNewUrlParser: true}); //creating the database
-mongoose.connect(`mongodb+srv://sjl:${mongoPW}@ssr-todo-app-jvm4p.mongodb.net/ssr-todo-app`, {useNewUrlParser: true});
+mongoose.connect("mongodb://localhost:27017/to-do-app-original",  {useNewUrlParser: true}); //creating the database
+// mongoose.connect(`mongodb+srv://sjl:${mongoPW}@ssr-todo-app-jvm4p.mongodb.net/ssr-todo-app`, {useNewUrlParser: true});
 
 var nameSchema =  mongoose.Schema({
   task: String,

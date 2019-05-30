@@ -20,8 +20,10 @@ class App extends Component {
   render() {
     return (
       <div style={mainDiv}> 
+      <div id="title-form">
         <Title />
         <Form />
+        </div>
         <Task tasks={this.state.tasks} />
       </div>
     );

@@ -2,12 +2,6 @@ import React, { Component } from "react";
 import Button from "@material-ui/core/Button";
 
 const Task = props => {
-  // {
-  //   var key = 0;
-  // }
-
-  // console.log('THIS IS PROPS', props.tasks)
-
   return (
     <div>
       <ol>
@@ -32,6 +26,7 @@ const Task = props => {
                   >
                     x
                   </button>
+                  <br />
                 </form>
               </li>
             </div>
