@@ -47,7 +47,7 @@ body {
 
 .title-container h1 {
   overflow: hidden;
-  font-size: 128px;
+  font-size: 110px;
   color: black;
   /* position: absolute; */
   bottom: 0;
@@ -55,7 +55,7 @@ body {
   align-self: flex-end;
   /* text-align: left; */
   margin: 0px 0px 11px -2px;
-  letter-spacing: -7px;
+  letter-spacing: -3px;
   word-spacing: 1px;
   font-weight: bolder;
   text-transform: uppercase;
@@ -84,6 +84,7 @@ body {
 }
 .userTask {
   font-family: "Libre Franklin", sans-serif;
+  animation: fade-in-right ease 1s forwards;
 }
 .delete-button {
   background-color: transparent;
@@ -132,4 +133,18 @@ li {
 .entry-time {
   display: inline;
   font-weight: bold;
+}
+
+
+/* KEY FRAMES */
+
+@keyframes fade-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
