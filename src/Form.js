@@ -78,22 +78,6 @@ const Form = props => {
           margin="normal"
           variant="outlined"
         />
-        <TextField
-          required          
-          select
-          id="form-input-field"
-          name="timezone"
-          margin="normal"
-          variant="outlined"
-          helperText='your timezone'
-          SelectProps={{
-            native: true
-          }}
-        >
-          <option value="PDT">Pacific Time</option>
-          <option value="CDT">Central Time</option>
-          <option value="EDT">Eastern Time</option>
-        </TextField>
         <br />
         <Button
           id="submit-button"

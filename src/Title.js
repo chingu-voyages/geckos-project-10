@@ -6,8 +6,7 @@ const Title = props => {
     <div className="title-container">
       <h1>My To Do List</h1>
       <p>
-        a simple to do app that sends SMS reminders to your phone so you'll
-        never forget to finish a task, even when you're on the run.
+        Keep all your tasks in one place and receive SMS reminders when they're due 
       </p>
     </div>
   );
