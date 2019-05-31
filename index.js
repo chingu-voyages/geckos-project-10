@@ -940,12 +940,11 @@ var Twilio = __webpack_require__(34); // const accountSid = 'AC019a30196451142d2
 var accountSid = process.env.TWILIO_SID || 'AC019a30196451142d27d879a8f687f3cc',
     authToken = process.env.TWILIO_AUTHTOKEN || '978f64b17f1149a06b5f1a84c6fe1bf4',
     mongoPW = process.env.MONGO_PW;
-mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://localhost:27017/to-do-app-original", {
-  useNewUrlParser: true
-}); //creating the database
-// mongoose.connect(`mongodb+srv://sjl:${mongoPW}@ssr-todo-app-jvm4p.mongodb.net/ssr-todo-app`, {useNewUrlParser: true});
+mongoose.Promise = global.Promise; // mongoose.connect("mongodb://localhost:27017/to-do-app-original",  {useNewUrlParser: true}); //creating the database
 
+mongoose.connect("mongodb+srv://sjl:".concat(mongoPW, "@ssr-todo-app-jvm4p.mongodb.net/ssr-todo-app"), {
+  useNewUrlParser: true
+});
 var nameSchema = mongoose.Schema({
   task: String,
   number: String,
