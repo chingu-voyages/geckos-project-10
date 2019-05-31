@@ -48,7 +48,6 @@
     "webpack-pwa-manifest": "^4.0.0"
   },
   "scripts": {
-    "start": "node index.js",
-    "build": "webpack --config webpack.server.js --w"
+    "start": "node index.js"
   }
 }
